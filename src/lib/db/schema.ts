@@ -1,13 +1,13 @@
 import { pgTable, bigint, varchar, boolean } from "drizzle-orm/pg-core";
 
-const user = pgTable("auth_user", {
+export const user = pgTable("auth_user", {
   id: varchar("id", {
     length: 15, // change this when using custom user ids
   }).primaryKey(),
   // other user attributes
 });
 
-const session = pgTable("auth_session", {
+export const session = pgTable("auth_session", {
   id: varchar("id", {
     length: 128,
   }).primaryKey(),
@@ -24,7 +24,7 @@ const session = pgTable("auth_session", {
   }).notNull(),
 });
 
-const key = pgTable("auth_key", {
+export const key = pgTable("auth_key", {
   id: varchar("id", {
     length: 255,
   }).primaryKey(),
