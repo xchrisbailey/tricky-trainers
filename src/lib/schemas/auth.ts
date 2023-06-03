@@ -1,6 +1,6 @@
-import { z } from 'zod'
+import { z } from 'zod';
 
-export const login_schema = z.object({
+export const user_schema = z.object({
   email: z.string().email(),
   password: z.string()
-})
+});
