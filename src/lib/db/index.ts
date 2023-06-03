@@ -1,7 +1,7 @@
-import postgres from 'pg';
 import { drizzle } from 'drizzle-orm/node-postgres';
+import { Pool } from 'pg';
 
-export const connectionPool = new postgres.Pool({
+export const connectionPool = new Pool({
   connectionString: process.env.DB_URL ?? ''
 });
 

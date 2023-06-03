@@ -1,4 +1,8 @@
-import { db } from '$lib/db';
-import { migrate } from 'drizzle-orm/node-postgres/migrator';
+import type { LayoutServerLoad } from './$types';
 
-export const load = async () => {};
+export const load: LayoutServerLoad = async ({ locals }) => {
+  const { user } = await locals.auth.validateUser();
+  return {
+    user
+  };
+};
