@@ -1,13 +1,5 @@
 import { relations, type InferModel } from 'drizzle-orm';
-import {
-  pgTable,
-  bigint,
-  varchar,
-  boolean,
-  text,
-  uuid,
-  integer
-} from 'drizzle-orm/pg-core';
+import { pgTable, bigint, varchar, boolean, text, uuid, integer } from 'drizzle-orm/pg-core';
 
 export const user = pgTable('auth_user', {
   id: varchar('id', {
@@ -58,7 +50,8 @@ export const dog = pgTable('dogs', {
   id: uuid('id').defaultRandom().primaryKey(),
   name: text('name').notNull(),
   breed: text('breed').notNull(),
-  age: integer('age').notNull(),
+  age_years: integer('ageYears').notNull(),
+  age_months: integer('ageMonths').notNull(),
   uid: integer('uid')
 });
 

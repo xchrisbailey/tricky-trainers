@@ -29,6 +29,13 @@
       "when": 1685851591243,
       "tag": "0003_slimy_obadiah_stane",
       "breakpoints": false
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1685862129255,
+      "tag": "0004_windy_zombie",
+      "breakpoints": false
     }
   ]
 }

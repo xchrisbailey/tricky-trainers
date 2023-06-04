@@ -21,11 +21,7 @@ export const actions: Actions = {
     }
 
     try {
-      const key = await auth.useKey(
-        'email',
-        form.data.email,
-        form.data.password
-      );
+      const key = await auth.useKey('email', form.data.email, form.data.password);
 
       const session = await auth.createSession(key.userId);
       locals.auth.setSession(session);

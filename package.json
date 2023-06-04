@@ -8,7 +8,8 @@
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "generate": "drizzle-kit generate:pg"
+    "generate": "drizzle-kit generate:pg",
+    "format": "npx prettier --write ./src"
   },
   "devDependencies": {
     "@skeletonlabs/skeleton": "^1.6.2",
@@ -34,7 +35,7 @@
     "svelte-check": "^3.0.1",
     "svelte-lucide": "^0.6.7",
     "svelte-preprocess": "^5.0.3",
-    "sveltekit-superforms": "1.0.0-rc.1",
+    "sveltekit-superforms": "1.0.0-rc.2",
     "tailwindcss": "^3.3.1",
     "tslib": "^2.5.3",
     "typescript": "^5.0.0",
