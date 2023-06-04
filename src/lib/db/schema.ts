@@ -1,12 +1,23 @@
-import { pgTable, bigint, varchar, boolean, text } from 'drizzle-orm/pg-core';
+import { relations, type InferModel } from 'drizzle-orm';
+import {
+  pgTable,
+  bigint,
+  varchar,
+  boolean,
+  text,
+  uuid,
+  integer
+} from 'drizzle-orm/pg-core';
 
 export const user = pgTable('auth_user', {
   id: varchar('id', {
     length: 15 // change this when using custom user ids
   }).primaryKey(),
   // other user attributes
-  email: text('email')
+  email: text('email').notNull()
 });
+
+export type User = InferModel<typeof user>;
 
 export const session = pgTable('auth_session', {
   id: varchar('id', {
@@ -42,3 +53,15 @@ export const key = pgTable('auth_key', {
     mode: 'number'
   })
 });
+
+export const dog = pgTable('dogs', {
+  id: uuid('id').defaultRandom().primaryKey(),
+  name: text('name').notNull(),
+  breed: text('breed').notNull(),
+  age: integer('age').notNull(),
+  uid: integer('uid')
+});
+
+export const userRelations = relations(user, ({ many }) => ({
+  dogs: many(dog)
+}));

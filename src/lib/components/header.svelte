@@ -1,17 +1,14 @@
 <script lang="ts">
-  import { enhance } from '$app/forms';
   import { AppBar } from '@skeletonlabs/skeleton';
-  import { LogIn, LogOut } from 'svelte-lucide';
-
+  import { LogIn, LogOut, Menu } from 'svelte-lucide';
+  import { enhance } from '$app/forms';
   import type { User } from 'lucia-auth';
 
-  export let user: User;
-
-  console.log(user);
+  export let user: User | null;
 </script>
 
 <AppBar>
-  <svelte:fragment slot="lead">(burger)</svelte:fragment>
+  <svelte:fragment slot="lead"><Menu class="md:hidden" /></svelte:fragment>
   <h1 class="h2">Tricky Trainers</h1>
   <svelte:fragment slot="trail">
     {#if !user}

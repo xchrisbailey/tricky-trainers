@@ -5,14 +5,19 @@
   import { AppShell } from '@skeletonlabs/skeleton';
   import Sidebar from '$lib/components/sidebar.svelte';
   import Header from '$lib/components/header.svelte';
-  import { page } from '$app/stores';
+  import type { PageData } from './$types';
 
-  export let data;
+  export let data: PageData;
 </script>
 
-<AppShell slotSidebarLeft="bg-surface-500/5 w-56 p-4">
+<AppShell
+  slotSidebarLeft="bg-surface-500/5 w-56 p-4"
+  slotHeader="shadow sticky"
+>
   <svelte:fragment slot="header"><Header user={data.user} /></svelte:fragment>
-  <svelte:fragment slot="sidebarLeft"><Sidebar /></svelte:fragment>
+  <svelte:fragment slot="sidebarLeft"
+    ><Sidebar user={data.user} /></svelte:fragment
+  >
   <main class="p-4">
     <slot />
   </main>

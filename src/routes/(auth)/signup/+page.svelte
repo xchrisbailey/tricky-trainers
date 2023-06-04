@@ -38,7 +38,7 @@
           {...$constraints.password}
         />
       </label>
-      <button class="self-end btn variant-ghost">Submit</button>
+      <button class="self-end btn variant-ghost" type="submit">Submit</button>
     </div>
   </form>
 </div>

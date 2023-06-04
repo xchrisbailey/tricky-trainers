@@ -15,6 +15,20 @@
       "when": 1685772208443,
       "tag": "0001_lethal_agent_brand",
       "breakpoints": false
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1685851502856,
+      "tag": "0002_safe_namor",
+      "breakpoints": false
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1685851591243,
+      "tag": "0003_slimy_obadiah_stane",
+      "breakpoints": false
     }
   ]
 }

@@ -6,7 +6,7 @@ import { user_schema } from '$lib/schemas/auth';
 
 export const load: PageServerLoad = async ({ locals }) => {
   const { session } = await locals.auth.validateUser();
-  if (session) throw redirect(302, '/');
+  if (session) throw redirect(302, '/dashboard');
 
   const form = await superValidate(null, user_schema);
   return { form };
