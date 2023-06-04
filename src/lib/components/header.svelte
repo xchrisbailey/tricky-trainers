@@ -3,7 +3,11 @@
   import { AppBar } from '@skeletonlabs/skeleton';
   import { LogIn, LogOut } from 'svelte-lucide';
 
-  export let user;
+  import type { User } from 'lucia-auth';
+
+  export let user: User;
+
+  console.log(user);
 </script>
 
 <AppBar>
