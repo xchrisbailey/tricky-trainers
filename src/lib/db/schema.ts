@@ -52,8 +52,11 @@ export const dog = pgTable('dogs', {
   breed: text('breed').notNull(),
   age_years: integer('ageYears').notNull(),
   age_months: integer('ageMonths').notNull(),
-  uid: integer('uid')
+  uid: text('uid')
 });
+
+export type Dog = InferModel<typeof dog>;
+export type NewDog = InferModel<typeof dog, 'insert'>;
 
 export const userRelations = relations(user, ({ many }) => ({
   dogs: many(dog)

@@ -36,6 +36,13 @@
       "when": 1685862129255,
       "tag": "0004_windy_zombie",
       "breakpoints": false
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1685865799132,
+      "tag": "0005_heavy_jackal",
+      "breakpoints": false
     }
   ]
 }

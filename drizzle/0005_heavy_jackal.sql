@@ -1,0 +1,1 @@
+ALTER TABLE "dogs" ALTER COLUMN "uid" SET DATA TYPE text;
