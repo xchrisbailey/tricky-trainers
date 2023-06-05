@@ -43,6 +43,27 @@
       "when": 1685865799132,
       "tag": "0005_heavy_jackal",
       "breakpoints": false
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1685900264757,
+      "tag": "0006_wooden_payback",
+      "breakpoints": false
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1685948872150,
+      "tag": "0007_superb_sabretooth",
+      "breakpoints": false
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1685949573483,
+      "tag": "0008_dusty_skullbuster",
+      "breakpoints": false
     }
   ]
 }

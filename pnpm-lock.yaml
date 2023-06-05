@@ -11,6 +11,9 @@ dependencies:
   drizzle-orm:
     specifier: ^0.26.5
     version: 0.26.5(@types/pg@8.10.1)(pg@8.11.0)(postgres@3.3.5)
+  drizzle-zod:
+    specifier: ^0.4.3
+    version: 0.4.3(drizzle-orm@0.26.5)(zod@3.21.4)
   lucia-auth:
     specifier: ^1.7.1
     version: 1.7.1
@@ -1108,6 +1111,16 @@ packages:
       '@types/pg': 8.10.1
       pg: 8.11.0
       postgres: 3.3.5
+    dev: false
+
+  /drizzle-zod@0.4.3(drizzle-orm@0.26.5)(zod@3.21.4):
+    resolution: {integrity: sha512-VyOMD88lyLZE+BeujYzXnRLxsREOJPfi3hVw12EWMMpu7e6IR6sVNlMoo8xPPuQSCbNSbUjfIyICnItwG+fmcA==}
+    peerDependencies:
+      drizzle-orm: '>=0.23.13'
+      zod: '*'
+    dependencies:
+      drizzle-orm: 0.26.5(@types/pg@8.10.1)(pg@8.11.0)(postgres@3.3.5)
+      zod: 3.21.4
     dev: false
 
   /electron-to-chromium@1.4.417:
@@ -2988,4 +3001,3 @@ packages:
 
   /zod@3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
-    dev: true

@@ -12,9 +12,11 @@ declare global {
     type Auth = import('$lib/server/lucia').Auth;
     type UserAttributes = {
       email: string;
+      first_name: string;
+      last_name: string;
     };
   }
 }
 
 // THIS IS IMPORTANT!!!
-export {};
+export { };

@@ -4,13 +4,13 @@
   import type { PageData } from './$types';
 
   export let data: PageData;
-  const { form, enhance, errors } = superForm(data.form);
+  const { form, errors } = superForm(data.form);
 </script>
 
-<form method="POST" class="mx-auto w-2/3" use:enhance>
+<form method="POST" class="mx-auto w-2/3">
   <div class="flex flex-col gap-5">
     <label class="label">
-      <span>name</span>
+      <span class="font-bold">name</span>
       <input
         type="text"
         class="input"
@@ -20,28 +20,30 @@
         bind:value={$form.name} />
     </label>
     <label class="label">
-      <span>age</span>
-      <div class="flex gap-5">
-        <input
-          class="input"
-          type="number"
-          step="1"
-          placeholder="years"
-          name="years"
-          id="years"
-          bind:value={$form.ageYears} />
-        <input
-          class="input"
-          type="number"
-          step="1"
-          placeholder="months"
-          name="months"
-          id="months"
-          bind:value={$form.ageMonths} />
+      <span class="font-bold">age</span>
+      <div class="flex gap-5 justify-between">
+        <label class="flex gap-5 items-baseline label grow">
+          <span>Years:</span>
+          <input
+            class="input grow"
+            type="number"
+            step="1"
+            name="age_years"
+            bind:value={$form.age_years} />
+        </label>
+        <label class="flex gap-5 items-baseline label grow">
+          <span>Months:</span>
+          <input
+            class="input grow"
+            name="age_months"
+            type="number"
+            step="1"
+            bind:value={$form.age_months} />
+        </label>
       </div>
     </label>
     <label class="label">
-      <span>breed</span>
+      <span class="font-bold">breed</span>
       <select id="breed" class="select" name="breed" bind:value={$form.breed}>
         {#each breeds as breed}
           <option value={breed}>{breed}</option>

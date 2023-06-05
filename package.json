@@ -46,6 +46,7 @@
   "dependencies": {
     "@lucia-auth/adapter-postgresql": "^1.0.1",
     "drizzle-orm": "^0.26.5",
+    "drizzle-zod": "^0.4.3",
     "lucia-auth": "^1.7.1",
     "pg": "^8.11.0",
     "postgres": "^3.3.5"
