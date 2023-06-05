@@ -13,5 +13,7 @@ export const load: PageServerLoad = async ({ locals }) => {
     with: { dogs: true }
   });
 
-  console.log(currentUser);
+  return {
+    user: currentUser
+  };
 };
