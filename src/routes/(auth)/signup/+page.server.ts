@@ -47,8 +47,6 @@ export const actions: Actions = {
       const session = await auth.createSession(user.userId);
       locals.auth.setSession(session);
     } catch (e) {
-      console.log(e);
-
       return fail(400);
     }
   }

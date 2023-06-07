@@ -3,12 +3,13 @@ import { dog, insert_dog_schema } from '$lib/db/schema';
 import { fail, redirect } from '@sveltejs/kit';
 import { superValidate } from 'sveltekit-superforms/server';
 import type { Actions, PageServerLoad } from './$types';
+import { new_dog_schema } from '$lib/schemas/dog';
 
 export const load: PageServerLoad = async ({ locals }) => {
   const { user } = await locals.auth.validateUser();
   if (!user) return redirect(300, '/login');
 
-  const form = await superValidate(null, insert_dog_schema);
+  const form = await superValidate(null, new_dog_schema);
 
   return {
     form,
