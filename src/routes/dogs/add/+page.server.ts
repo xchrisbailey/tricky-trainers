@@ -38,6 +38,7 @@ export const actions = {
 
     try {
       await db.insert(dog).values(form.data);
+      return { success: true };
     } catch (e) {
       fail(400, { e });
     }

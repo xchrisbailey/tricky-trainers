@@ -2,12 +2,20 @@
   import { breeds } from '$lib/data/breeds';
   import { superForm } from 'sveltekit-superforms/client';
   import type { PageData } from './$types';
+  import { fail } from '@sveltejs/kit';
+  import { goto } from '$app/navigation';
 
   export let data: PageData;
+  if (!data.form) throw fail(400);
   const { form, errors, enhance, constraints } = superForm(data.form, {
     resetForm: true,
     invalidateAll: true,
-    applyAction: true
+    applyAction: true,
+    onResult({result}) {
+        if (result.type === 'success') {
+            goto('/dashboard')
+          }
+      }
   });
 </script>
 
