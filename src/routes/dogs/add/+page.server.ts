@@ -1,9 +1,9 @@
 import { db } from '$lib/db';
 import { dog, insert_dog_schema } from '$lib/db/schema';
+import { new_dog_schema } from '$lib/schemas/dog';
 import { fail, redirect } from '@sveltejs/kit';
 import { superValidate } from 'sveltekit-superforms/server';
 import type { Actions, PageServerLoad } from './$types';
-import { new_dog_schema } from '$lib/schemas/dog';
 
 export const load: PageServerLoad = async ({ locals }) => {
   const { user } = await locals.auth.validateUser();
@@ -26,6 +26,13 @@ export const actions = {
 
     const form = await superValidate(data, insert_dog_schema);
     form.data.uid = user.userId;
+
+    /** Titlecase dog name */
+    form.data.name = form.data.name
+      .toLowerCase()
+      .split(' ')
+      .map(w => w.charAt(0).toUpperCase() + w.substring(1))
+      .join(' ');
 
     if (!form.valid) return fail(400, { form });
 
