@@ -15,3 +15,10 @@ export const new_dog_schema = z.object({
   age_years: z.number().max(25),
   age_months: z.number().max(11)
 });
+
+export const update_dog_schema = z.object({
+  name: z.string(),
+  age_years: z.number(),
+  age_months: z.number(),
+  breed: z.string()
+});

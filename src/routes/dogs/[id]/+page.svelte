@@ -4,13 +4,9 @@
   import type { Dog } from '$lib/db/schema';
   import { enhance } from '$app/forms';
   import { goto } from '$app/navigation';
-  import { Trash2 } from 'svelte-lucide';
+  import { Edit, Trash2 } from 'svelte-lucide';
 
   export let data: PageData;
-  if (!data || !data.dog || !data.dog[0]) {
-    redirect(300, '/dashboard');
-  }
-
   if (!data.dog) throw error(400, 'dog not found');
   let dog: Dog = data.dog[0];
 </script>
@@ -39,7 +35,7 @@
     <p><span class="underline">breed</span>: {dog.breed}</p>
   </section>
 </div>
-<div class="flex mt-10">
+<div class="flex gap-2 mt-10">
   <form
     action={`?/delete`}
     method="post"
@@ -52,4 +48,5 @@
     }}>
     <button class="btn-icon variant-ghost-warning"><Trash2 /> </button>
   </form>
+  <a href={`/dogs/${dog.id}/edit`} class="btn-icon variant-ghost-secondary"><Edit /></a>
 </div>
