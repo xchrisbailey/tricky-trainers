@@ -19,4 +19,4 @@ declare global {
 }
 
 // THIS IS IMPORTANT!!!
-export { };
+export {};

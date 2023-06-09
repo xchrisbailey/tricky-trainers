@@ -6,7 +6,6 @@ module.exports = {
   semi: true,
   svelteSortOrder: 'options-styles-scripts-markup',
   svelteStrictMode: false,
-  svelteBracketNewLine: false,
   svelteIndentScriptAndStyle: true,
   trailingComma: 'none'
 };

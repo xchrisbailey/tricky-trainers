@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "generate": "drizzle-kit generate:pg",
+    "db:generate": "drizzle-kit generate:pg",
     "format": "npx prettier --write ./src"
   },
   "devDependencies": {
