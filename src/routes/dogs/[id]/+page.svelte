@@ -15,7 +15,7 @@
   {redirect(300, '/dashboard')}
 {/if}
 
-<h2 class="h1">{dog.name}</h2>
+<h2 class="h1">{dog.flare} {dog.name}</h2>
 <div class="grid-cols-2">
   <section class="flex flex-col gap-1 mt-3">
     <p>
@@ -45,7 +45,8 @@
           goto('/dashboard');
         }
       };
-    }}>
+    }}
+  >
     <button class="btn-icon variant-ghost-warning"><Trash2 /> </button>
   </form>
   <a href={`/dogs/${dog.id}/edit`} class="btn-icon variant-ghost-secondary"><Edit /></a>
