@@ -64,6 +64,13 @@
       "when": 1685949573483,
       "tag": "0008_dusty_skullbuster",
       "breakpoints": false
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1686267280720,
+      "tag": "0009_fancy_ares",
+      "breakpoints": false
     }
   ]
 }

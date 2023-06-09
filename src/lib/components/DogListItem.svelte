@@ -7,7 +7,7 @@
 <dl class="list-dl">
   <a href={`/dogs/${dog.id}`} class="group">
     <div class="group-hover:bg-surface-600">
-      <span class="badge bg-primary-500">✨</span>
+      <span class="badge bg-primary-500">{dog.flare}</span>
       <span class="flex-auto">
         <dt>{dog.name}</dt>
         <dd>

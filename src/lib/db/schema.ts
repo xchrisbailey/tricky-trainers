@@ -57,6 +57,7 @@ export const key = pgTable('auth_key', {
 export const dog = pgTable('dogs', {
   id: uuid('id').defaultRandom().primaryKey(),
   name: text('name').notNull(),
+  flare: text('flare').notNull(),
   breed: text('breed').notNull(),
   age_years: integer('ageYears').notNull(),
   age_months: integer('ageMonths').notNull(),

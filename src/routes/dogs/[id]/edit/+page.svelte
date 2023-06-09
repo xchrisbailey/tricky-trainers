@@ -4,6 +4,7 @@
   import { breeds } from '$lib/data/breeds';
   import { fail } from '@sveltejs/kit';
   import { goto } from '$app/navigation';
+  import { emojis } from '$lib/data/emojis';
 
   export let data: PageData;
 
@@ -87,6 +88,25 @@
       {#if $errors.breed}
         <span>{$errors.breed}</span>
       {/if}
+    </label>
+    <label class="label">
+      <span class="font-bold">Give them some flare:</span>
+      <div class="grid grid-cols-5 gap-5">
+        {#each emojis as emoji}
+          <div class="space-y-2">
+            <label class="flex items-center space-x-2">
+              <input
+                type="radio"
+                class="radio"
+                name="flare"
+                bind:group={$form.flare}
+                value={emoji}
+                {...$constraints.flare} />
+              <p>{emoji}</p>
+            </label>
+          </div>
+        {/each}
+      </div>
     </label>
     <button class="self-end btn variant-ghost-surface">Submit</button>
   </div>
