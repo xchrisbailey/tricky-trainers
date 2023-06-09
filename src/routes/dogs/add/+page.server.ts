@@ -27,8 +27,6 @@ export const actions = {
     const form = await superValidate(data, insert_dog_schema);
     form.data.uid = user.userId;
 
-    console.log(form.data);
-
     /** Titlecase dog name */
     form.data.name = form.data.name
       .toLowerCase()
