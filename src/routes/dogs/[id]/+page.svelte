@@ -16,8 +16,9 @@
 {/if}
 
 <h2 class="h1">{dog.flare} {dog.name}</h2>
-<div class="grid-cols-2">
+<div class="grid grid-cols-2 gap-10">
   <section class="flex flex-col gap-1 mt-3">
+    <h3 class="h3">Basic Info</h3>
     <p>
       <span class="underline">age</span>:
       {#if dog.age_years > 1}
@@ -33,6 +34,9 @@
       old
     </p>
     <p><span class="underline">breed</span>: {dog.breed}</p>
+  </section>
+  <section>
+    <h3 class="h3">Training Log</h3>
   </section>
 </div>
 <div class="flex gap-2 mt-10">

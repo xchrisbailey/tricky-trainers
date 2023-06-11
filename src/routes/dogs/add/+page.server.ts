@@ -1,5 +1,5 @@
 import { db } from '$lib/db';
-import { dog, insert_dog_schema } from '$lib/db/schema';
+import { dog, insert_dog_schema, training_log } from '$lib/db/schema';
 import { new_dog_schema } from '$lib/schemas/dog';
 import { fail, redirect } from '@sveltejs/kit';
 import { superValidate } from 'sveltekit-superforms/server';
@@ -37,7 +37,8 @@ export const actions = {
     if (!form.valid) return fail(400, { form });
 
     try {
-      await db.insert(dog).values(form.data);
+      const dog_id = await db.insert(dog).values(form.data).returning({ id: dog.id });
+      await db.insert(training_log).values({ did: dog_id[0].id });
       return { success: true };
     } catch (e) {
       fail(400, { e });

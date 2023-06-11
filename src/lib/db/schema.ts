@@ -63,13 +63,12 @@ export const dog = pgTable('dogs', {
   age_months: integer('ageMonths').notNull(),
   uid: text('uid')
     .notNull()
-    .references(() => user.id),
-  training_log: text('training_log')
+    .references(() => user.id)
 });
 
 export const dogsRelations = relations(dog, ({ one }) => ({
   owner: one(user, { fields: [dog.uid], references: [user.id] }),
-  training_log: one(training_log, { fields: [dog.training_log], references: [training_log.id] })
+  training_log: one(training_log, { fields: [dog.id], references: [training_log.id] })
 }));
 
 export type Dog = InferModel<typeof dog, 'select'>;
@@ -77,7 +76,8 @@ export type NewDog = InferModel<typeof dog, 'insert'>;
 export const insert_dog_schema = createInsertSchema(dog);
 
 export const training_log = pgTable('training_logs', {
-  id: uuid('id').defaultRandom().primaryKey()
+  id: uuid('id').defaultRandom().primaryKey(),
+  did: text('did').notNull()
 });
 
 export type TrainingLog = InferModel<typeof training_log, 'select'>;

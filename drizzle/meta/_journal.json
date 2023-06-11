@@ -78,6 +78,13 @@
       "when": 1686313278941,
       "tag": "0010_solid_starjammers",
       "breakpoints": false
+    },
+    {
+      "idx": 11,
+      "version": "5",
+      "when": 1686506503124,
+      "tag": "0011_sturdy_orphan",
+      "breakpoints": false
     }
   ]
 }

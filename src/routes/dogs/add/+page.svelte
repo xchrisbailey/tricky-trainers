@@ -35,7 +35,8 @@
         id="name"
         bind:value={$form.name}
         data-invalid={$errors.name}
-        {...$constraints.name} />
+        {...$constraints.name}
+      />
     </label>
     {#if $errors.name}
       <span>{$errors.name}</span>
@@ -53,7 +54,8 @@
             name="age_years"
             bind:value={$form.age_years}
             data-invalid={$errors.age_years}
-            {...$constraints.age_years} />
+            {...$constraints.age_years}
+          />
           {#if $errors.age_years}
             <span>{$errors.age_years}</span>
           {/if}
@@ -68,7 +70,8 @@
             step="1"
             bind:value={$form.age_months}
             data-invalid={$errors.age_months}
-            {...$constraints.age_months} />
+            {...$constraints.age_months}
+          />
           {#if $errors.age_months}
             <span>{$errors.age_months}</span>
           {/if}
@@ -84,7 +87,8 @@
         name="breed"
         bind:value={$form.breed}
         data-invalid={$errors.breed}
-        {...$constraints.breed}>
+        {...$constraints.breed}
+      >
         {#each breeds as breed}
           <option value={breed}>{breed}</option>
         {/each}
@@ -106,7 +110,8 @@
                 name="flare"
                 bind:group={$form.flare}
                 value={emoji}
-                {...$constraints.flare} />
+                {...$constraints.flare}
+              />
               <p>{emoji}</p>
             </label>
           </div>
