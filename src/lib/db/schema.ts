@@ -1,5 +1,14 @@
 import { relations, type InferModel } from 'drizzle-orm';
-import { pgTable, bigint, varchar, boolean, text, uuid, integer } from 'drizzle-orm/pg-core';
+import {
+  pgTable,
+  bigint,
+  varchar,
+  boolean,
+  text,
+  uuid,
+  integer,
+  primaryKey
+} from 'drizzle-orm/pg-core';
 import { createInsertSchema } from 'drizzle-zod';
 
 export const user = pgTable('auth_user', {
@@ -80,6 +89,48 @@ export const training_log = pgTable('training_logs', {
   did: text('did').notNull()
 });
 
+export const training_log_relations = relations(training_log, ({ many }) => ({
+  trick_to_logs: many(trick_to_logs)
+}));
+
 export type TrainingLog = InferModel<typeof training_log, 'select'>;
 export type NewTrainingLog = InferModel<typeof training_log, 'insert'>;
 export const NewTrainingLogSchema = createInsertSchema(training_log);
+
+export const trick = pgTable('trick', {
+  id: uuid('id').defaultRandom().primaryKey(),
+  name: text('name').notNull(),
+  description: text('description').notNull(),
+  example: text('example').notNull(),
+  difficulty: integer('difficulty').default(0)
+});
+
+export const trick_relations = relations(trick, ({ many }) => ({
+  trick_to_logs: many(trick_to_logs)
+}));
+
+export const trick_to_logs = pgTable(
+  'trick_to_logs',
+  {
+    tid: text('tid')
+      .notNull()
+      .references(() => trick.id),
+    lid: text('lid')
+      .notNull()
+      .references(() => training_log.id)
+  },
+  table => ({
+    pk: primaryKey(table.lid, table.tid)
+  })
+);
+
+export const trick_to_log_relation = relations(trick_to_logs, ({ one }) => ({
+  trick: one(trick, {
+    fields: [trick_to_logs.tid],
+    references: [trick.id]
+  }),
+  log: one(training_log, {
+    fields: [trick_to_logs.lid],
+    references: [training_log.id]
+  })
+}));
