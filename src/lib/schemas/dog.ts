@@ -7,8 +7,7 @@ export const dog_schema = z.object({
   breed: z.string(),
   age_years: z.number().max(20),
   age_months: z.number().max(11),
-  training_log: z.string().uuid(),
-  uid: z.string().uuid()
+  training_log: z.string().uuid()
 });
 
 export const new_dog_schema = dog_schema.pick({
@@ -16,8 +15,7 @@ export const new_dog_schema = dog_schema.pick({
   breed: true,
   flare: true,
   age_years: true,
-  age_months: true,
-  uid: true
+  age_months: true
 });
 
 export const update_dog_schema = dog_schema.pick({

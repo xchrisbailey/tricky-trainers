@@ -1,18 +1,20 @@
 import { db } from '$lib/db';
-import { dog as dogSchema, type Dog, dog } from '$lib/db/schema';
 import { error, fail, redirect } from '@sveltejs/kit';
-import { eq } from 'drizzle-orm';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ locals, params }) => {
   const { user } = await locals.auth.validateUser();
   if (!user) return redirect(300, 'login');
 
-  const dog: Dog[] = await db.select().from(dogSchema).where(eq(dogSchema.id, params.id));
+  const dog = await db.dog.findFirst({
+    where: {
+      id: params.id
+    }
+  });
 
-  if (!dog[0] || !dog) {
+  if (!dog) {
     return redirect(300, 'dog not found');
-  } else if (dog[0].uid !== user.userId) {
+  } else if (dog.user_id !== user.userId) {
     return error(401, 'not your puppers');
   }
 
@@ -26,10 +28,8 @@ export const actions = {
     const { user } = await locals.auth.validateUser();
     if (!user) return redirect(300, 'login');
 
-    const id = params.id;
-
     try {
-      await db.delete(dog).where(eq(dog.id, id));
+      await db.dog.delete({ where: { id: params.id } });
       return {
         success: true
       };

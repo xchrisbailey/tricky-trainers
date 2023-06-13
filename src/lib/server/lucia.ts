@@ -1,12 +1,14 @@
 // lib/server/lucia.ts
 import { dev } from '$app/environment';
-import { connectionPool } from '$lib/db';
-import { pg } from '@lucia-auth/adapter-postgresql';
+import { PrismaClient } from '@prisma/client';
+import prisma from '@lucia-auth/adapter-prisma';
 import lucia from 'lucia-auth';
 import { sveltekit } from 'lucia-auth/middleware';
 
+const client = new PrismaClient();
+
 export const auth = lucia({
-  adapter: pg(connectionPool),
+  adapter: prisma(client),
   env: dev ? 'DEV' : 'PROD',
   middleware: sveltekit(),
   transformDatabaseUser: userData => {

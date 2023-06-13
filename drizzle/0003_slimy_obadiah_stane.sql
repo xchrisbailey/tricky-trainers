@@ -1,1 +1,0 @@
-ALTER TABLE "dogs" ADD COLUMN "uid" integer;
