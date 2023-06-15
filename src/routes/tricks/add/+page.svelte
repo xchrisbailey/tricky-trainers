@@ -15,7 +15,6 @@
     applyAction: true,
     onResult({ result }) {
       if (result.type === 'success') {
-        console.log(result);
         goto('/tricks');
         toastStore.trigger({
           message: 'trick added to database',

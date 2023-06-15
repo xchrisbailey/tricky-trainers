@@ -8,7 +8,8 @@ const Schema: z.ZodType<Prisma.AuthUserCountOrderByAggregateInput> = z
     id: z.lazy(() => SortOrderSchema).optional(),
     email: z.lazy(() => SortOrderSchema).optional(),
     first_name: z.lazy(() => SortOrderSchema).optional(),
-    last_name: z.lazy(() => SortOrderSchema).optional()
+    last_name: z.lazy(() => SortOrderSchema).optional(),
+    role: z.lazy(() => SortOrderSchema).optional()
   })
   .strict();
 

@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { RoleSchema } from '../enums/Role.schema';
 import { AuthSessionCreateNestedManyWithoutAuth_userInputObjectSchema } from './AuthSessionCreateNestedManyWithoutAuth_userInput.schema';
 import { AuthKeyCreateNestedManyWithoutAuth_userInputObjectSchema } from './AuthKeyCreateNestedManyWithoutAuth_userInput.schema';
 import { DogCreateNestedManyWithoutAuthUserInputObjectSchema } from './DogCreateNestedManyWithoutAuthUserInput.schema';
@@ -12,6 +13,7 @@ const Schema: z.ZodType<Prisma.AuthUserCreateInput> = z
     email: z.string(),
     first_name: z.string(),
     last_name: z.string(),
+    role: z.lazy(() => RoleSchema).optional(),
     auth_session: z
       .lazy(() => AuthSessionCreateNestedManyWithoutAuth_userInputObjectSchema)
       .optional(),

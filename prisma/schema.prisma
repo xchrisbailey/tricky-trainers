@@ -22,10 +22,16 @@ model AuthUser {
   email        String
   first_name   String
   last_name    String
+  role         Role          @default(USER)
   dogs         Dog[]
   tricks       Trick[]
 
   @@map("auth_user")
+}
+
+enum Role {
+  USER
+  ADMIN
 }
 
 model AuthSession {

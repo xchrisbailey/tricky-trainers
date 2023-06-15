@@ -13,6 +13,7 @@ const Schema: z.ZodType<Prisma.AuthUserOrderByWithRelationInput> = z
     email: z.lazy(() => SortOrderSchema).optional(),
     first_name: z.lazy(() => SortOrderSchema).optional(),
     last_name: z.lazy(() => SortOrderSchema).optional(),
+    role: z.lazy(() => SortOrderSchema).optional(),
     auth_session: z.lazy(() => AuthSessionOrderByRelationAggregateInputObjectSchema).optional(),
     auth_key: z.lazy(() => AuthKeyOrderByRelationAggregateInputObjectSchema).optional(),
     dogs: z.lazy(() => DogOrderByRelationAggregateInputObjectSchema).optional(),

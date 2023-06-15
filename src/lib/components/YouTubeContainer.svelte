@@ -1,8 +1,6 @@
 <script lang="ts">
   export let url: string;
   export let trick_name: string;
-
-  console.log(url.split('/')[3]);
 </script>
 
 <iframe
