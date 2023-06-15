@@ -1,8 +1,8 @@
+import { db } from '$lib/db';
 import { new_trick_schema } from '$lib/schemas/trick';
 import { fail, redirect } from '@sveltejs/kit';
 import { superValidate } from 'sveltekit-superforms/server';
 import type { Actions, PageServerLoad } from './$types';
-import { db } from '$lib/db';
 
 export const load: PageServerLoad = async ({ locals }) => {
   const { user } = await locals.auth.validateUser();

@@ -92,8 +92,8 @@ devDependencies:
     specifier: ^3.0.1
     version: 3.4.3(postcss-load-config@4.0.1)(postcss@8.4.24)(svelte@3.59.1)
   svelte-lucide:
-    specifier: ^0.6.7
-    version: 0.6.7(svelte@3.59.1)
+    specifier: ^0.6.8
+    version: 0.6.8(svelte@3.59.1)
   svelte-preprocess:
     specifier: ^5.0.3
     version: 5.0.4(postcss-load-config@4.0.1)(postcss@8.4.24)(svelte@3.59.1)(typescript@5.1.3)
@@ -3154,8 +3154,8 @@ packages:
       svelte: 3.59.1
     dev: true
 
-  /svelte-lucide@0.6.7(svelte@3.59.1):
-    resolution: {integrity: sha512-CX+Zoge/9d3rB6gtaTzvTkoBI0da4SF4zy4mjriTL/i9RvZcXBRIapqTygh7zJEMv/Tq9Bbck8+ByJXRfEcuJg==}
+  /svelte-lucide@0.6.8(svelte@3.59.1):
+    resolution: {integrity: sha512-4rzG2gzz60rDOtTI+8/cX3EzluZIZpJ1m6KXq5XADvDYialK+9jHRIDHAFBsREWji2qVhhy8yFgwdMamlyT8cA==}
     peerDependencies:
       svelte: ^3.54.0 || ^4.0.0
     dependencies:
