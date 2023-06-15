@@ -15,9 +15,7 @@
       <a href="/login" class="btn-icon variant-ghost-surface"><LogIn /></a>
     {:else}
       <form action="/signout" method="post" use:enhance>
-        <button type="submit" class="btn-icon variant-ghost-surface"
-          ><LogOut /></button
-        >
+        <button type="submit" class="btn-icon variant-ghost-surface"><LogOut /></button>
       </form>
     {/if}
   </svelte:fragment>

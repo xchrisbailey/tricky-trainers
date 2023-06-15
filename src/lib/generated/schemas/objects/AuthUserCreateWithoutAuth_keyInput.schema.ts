@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { AuthSessionCreateNestedManyWithoutAuth_userInputObjectSchema } from './AuthSessionCreateNestedManyWithoutAuth_userInput.schema';
 import { DogCreateNestedManyWithoutAuthUserInputObjectSchema } from './DogCreateNestedManyWithoutAuthUserInput.schema';
+import { TrickCreateNestedManyWithoutUserInputObjectSchema } from './TrickCreateNestedManyWithoutUserInput.schema';
 
 import type { Prisma } from '@prisma/client';
 
@@ -13,7 +14,8 @@ const Schema: z.ZodType<Prisma.AuthUserCreateWithoutAuth_keyInput> = z
     auth_session: z
       .lazy(() => AuthSessionCreateNestedManyWithoutAuth_userInputObjectSchema)
       .optional(),
-    dogs: z.lazy(() => DogCreateNestedManyWithoutAuthUserInputObjectSchema).optional()
+    dogs: z.lazy(() => DogCreateNestedManyWithoutAuthUserInputObjectSchema).optional(),
+    tricks: z.lazy(() => TrickCreateNestedManyWithoutUserInputObjectSchema).optional()
   })
   .strict();
 

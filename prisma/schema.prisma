@@ -7,7 +7,7 @@ generator client {
 
 generator zod {
   provider = "prisma-zod-generator"
-  output = "../src/lib/generated/"
+  output   = "../src/lib/generated/"
 }
 
 datasource db {
@@ -23,6 +23,7 @@ model AuthUser {
   first_name   String
   last_name    String
   dogs         Dog[]
+  tricks       Trick[]
 
   @@map("auth_user")
 }
@@ -59,4 +60,15 @@ model Dog {
   age_months Int
   AuthUser   AuthUser? @relation(fields: [user_id], references: [id])
   user_id    String?
+}
+
+model Trick {
+  id          String    @id @default(cuid())
+  name        String
+  description String
+  example     String
+  difficulty  Int
+  User        AuthUser? @relation(fields: [added_by], references: [id])
+  added_by    String
+  created_on  DateTime  @default(now())
 }

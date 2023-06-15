@@ -2,7 +2,7 @@
   import '@skeletonlabs/skeleton/themes/theme-modern.css';
   import '@skeletonlabs/skeleton/styles/skeleton.css';
   import '../app.postcss';
-  import { AppShell } from '@skeletonlabs/skeleton';
+  import { AppShell, Toast } from '@skeletonlabs/skeleton';
   import Sidebar from '$lib/components/sidebar.svelte';
   import Header from '$lib/components/header.svelte';
   import type { PageData } from './$types';
@@ -17,3 +17,5 @@
     <slot />
   </main>
 </AppShell>
+
+<Toast />

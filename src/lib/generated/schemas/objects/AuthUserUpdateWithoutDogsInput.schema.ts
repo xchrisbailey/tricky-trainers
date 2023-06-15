@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { StringFieldUpdateOperationsInputObjectSchema } from './StringFieldUpdateOperationsInput.schema';
 import { AuthSessionUpdateManyWithoutAuth_userNestedInputObjectSchema } from './AuthSessionUpdateManyWithoutAuth_userNestedInput.schema';
 import { AuthKeyUpdateManyWithoutAuth_userNestedInputObjectSchema } from './AuthKeyUpdateManyWithoutAuth_userNestedInput.schema';
+import { TrickUpdateManyWithoutUserNestedInputObjectSchema } from './TrickUpdateManyWithoutUserNestedInput.schema';
 
 import type { Prisma } from '@prisma/client';
 
@@ -22,7 +23,8 @@ const Schema: z.ZodType<Prisma.AuthUserUpdateWithoutDogsInput> = z
     auth_session: z
       .lazy(() => AuthSessionUpdateManyWithoutAuth_userNestedInputObjectSchema)
       .optional(),
-    auth_key: z.lazy(() => AuthKeyUpdateManyWithoutAuth_userNestedInputObjectSchema).optional()
+    auth_key: z.lazy(() => AuthKeyUpdateManyWithoutAuth_userNestedInputObjectSchema).optional(),
+    tricks: z.lazy(() => TrickUpdateManyWithoutUserNestedInputObjectSchema).optional()
   })
   .strict();
 

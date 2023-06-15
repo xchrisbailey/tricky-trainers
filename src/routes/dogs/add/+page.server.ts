@@ -48,8 +48,7 @@ export const actions = {
 
       return { success: true };
     } catch (e) {
-      console.log(e);
-      fail(400, { e });
+      throw fail(400, { e });
     }
   }
 } satisfies Actions;

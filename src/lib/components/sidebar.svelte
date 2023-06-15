@@ -11,5 +11,6 @@
   {#if user}
     <!-- <li><a href="/dogs">My Dogs</a></li> -->
     <li><a href="/dashboard">Dashboard</a></li>
+    <li><a href="/tricks">Tricks</a></li>
   {/if}
 </ul>

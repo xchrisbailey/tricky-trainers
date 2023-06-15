@@ -13,8 +13,6 @@ export const load: PageServerLoad = async ({ locals }) => {
     }
   });
 
-  console.log(current_user);
-
   return {
     user: current_user
   };

@@ -3,6 +3,7 @@ import { SortOrderSchema } from '../enums/SortOrder.schema';
 import { AuthSessionOrderByRelationAggregateInputObjectSchema } from './AuthSessionOrderByRelationAggregateInput.schema';
 import { AuthKeyOrderByRelationAggregateInputObjectSchema } from './AuthKeyOrderByRelationAggregateInput.schema';
 import { DogOrderByRelationAggregateInputObjectSchema } from './DogOrderByRelationAggregateInput.schema';
+import { TrickOrderByRelationAggregateInputObjectSchema } from './TrickOrderByRelationAggregateInput.schema';
 
 import type { Prisma } from '@prisma/client';
 
@@ -14,7 +15,8 @@ const Schema: z.ZodType<Prisma.AuthUserOrderByWithRelationInput> = z
     last_name: z.lazy(() => SortOrderSchema).optional(),
     auth_session: z.lazy(() => AuthSessionOrderByRelationAggregateInputObjectSchema).optional(),
     auth_key: z.lazy(() => AuthKeyOrderByRelationAggregateInputObjectSchema).optional(),
-    dogs: z.lazy(() => DogOrderByRelationAggregateInputObjectSchema).optional()
+    dogs: z.lazy(() => DogOrderByRelationAggregateInputObjectSchema).optional(),
+    tricks: z.lazy(() => TrickOrderByRelationAggregateInputObjectSchema).optional()
   })
   .strict();
 

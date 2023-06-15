@@ -3,6 +3,7 @@ import { StringFilterObjectSchema } from './StringFilter.schema';
 import { AuthSessionListRelationFilterObjectSchema } from './AuthSessionListRelationFilter.schema';
 import { AuthKeyListRelationFilterObjectSchema } from './AuthKeyListRelationFilter.schema';
 import { DogListRelationFilterObjectSchema } from './DogListRelationFilter.schema';
+import { TrickListRelationFilterObjectSchema } from './TrickListRelationFilter.schema';
 
 import type { Prisma } from '@prisma/client';
 
@@ -30,7 +31,8 @@ const Schema: z.ZodType<Prisma.AuthUserWhereInput> = z
     last_name: z.union([z.lazy(() => StringFilterObjectSchema), z.string()]).optional(),
     auth_session: z.lazy(() => AuthSessionListRelationFilterObjectSchema).optional(),
     auth_key: z.lazy(() => AuthKeyListRelationFilterObjectSchema).optional(),
-    dogs: z.lazy(() => DogListRelationFilterObjectSchema).optional()
+    dogs: z.lazy(() => DogListRelationFilterObjectSchema).optional(),
+    tricks: z.lazy(() => TrickListRelationFilterObjectSchema).optional()
   })
   .strict();
 
