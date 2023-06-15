@@ -64,9 +64,9 @@ model Dog {
 
 model Trick {
   id          String    @id @default(cuid())
-  name        String
+  name        String    @unique
   description String
-  example     String
+  example     String    @unique
   difficulty  Int
   User        AuthUser? @relation(fields: [added_by], references: [id])
   added_by    String
