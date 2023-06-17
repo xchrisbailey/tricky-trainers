@@ -1,8 +1,6 @@
 import { db } from '$lib/db';
-import { superValidate } from 'sveltekit-superforms/server';
-import type { Actions, PageServerLoad } from './$types';
-import { error, fail } from '@sveltejs/kit';
-import { new_trick_schema } from '$lib/schemas/trick';
+import type { PageServerLoad } from './$types';
+import { fail } from '@sveltejs/kit';
 
 export const load: PageServerLoad = async () => {
   try {

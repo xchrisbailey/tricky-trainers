@@ -6,8 +6,10 @@ import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ locals }) => {
   const { user } = await locals.auth.validateUser();
-  if (!user) return redirect(300, '/login');
+
+  if (user?.role !== 'ADMIN') return redirect(300, '/login');
   const form = await superValidate(null, new_trick_schema);
+
   return {
     form,
     user

@@ -2,30 +2,35 @@
   import { RangeSlider, toastStore } from '@skeletonlabs/skeleton';
   import { superForm } from 'sveltekit-superforms/client';
   import type { PageData } from './$types';
-  import { fail } from '@sveltejs/kit';
+  import { error, redirect } from '@sveltejs/kit';
   import SuperDebug from 'sveltekit-superforms/client/SuperDebug.svelte';
-  import { goto } from '$app/navigation';
 
   export let data: PageData;
 
-  if (!data.form) throw fail(400);
+  if (!data.form) throw error(400, { message: 'invalid form' });
   const { form, constraints, errors, enhance } = superForm(data.form, {
     resetForm: true,
     invalidateAll: true,
     applyAction: true,
     onResult({ result }) {
       if (result.type === 'success') {
-        goto('/tricks');
         toastStore.trigger({
           message: 'trick added to database',
           background: 'variant-filled-success'
         });
+        return redirect(300, '/tricks');
       }
+    },
+    onError({ result }) {
+      toastStore.trigger({
+        message: result.error.message,
+        background: 'variant-filled-error'
+      });
     }
   });
 </script>
 
-<form use:enhance method="post" class="flex flex-col gap-4 mx-auto w-3/4">
+<form method="post" class="flex flex-col gap-4 mx-auto w-3/4" use:enhance>
   <label class="label">
     <span class="font-bold">Name</span>
     <input
