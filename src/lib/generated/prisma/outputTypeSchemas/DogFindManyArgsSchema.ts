@@ -6,6 +6,8 @@ import { DogOrderByWithRelationInputSchema } from '../inputTypeSchemas/DogOrderB
 import { DogWhereUniqueInputSchema } from '../inputTypeSchemas/DogWhereUniqueInputSchema'
 import { DogScalarFieldEnumSchema } from '../inputTypeSchemas/DogScalarFieldEnumSchema'
 import { AuthUserArgsSchema } from "../outputTypeSchemas/AuthUserArgsSchema"
+import { TrainingLogFindManyArgsSchema } from "../outputTypeSchemas/TrainingLogFindManyArgsSchema"
+import { DogCountOutputTypeArgsSchema } from "../outputTypeSchemas/DogCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 
@@ -18,6 +20,8 @@ export const DogSelectSchema: z.ZodType<Prisma.DogSelect> = z.object({
   age_months: z.boolean().optional(),
   user_id: z.boolean().optional(),
   AuthUser: z.union([z.boolean(),z.lazy(() => AuthUserArgsSchema)]).optional(),
+  TrainingLog: z.union([z.boolean(),z.lazy(() => TrainingLogFindManyArgsSchema)]).optional(),
+  _count: z.union([z.boolean(),z.lazy(() => DogCountOutputTypeArgsSchema)]).optional(),
 }).strict()
 
 export const DogFindManyArgsSchema: z.ZodType<Prisma.DogFindManyArgs> = z.object({

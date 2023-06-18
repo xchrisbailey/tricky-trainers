@@ -7,6 +7,7 @@ import { AuthSessionListRelationFilterSchema } from './AuthSessionListRelationFi
 import { AuthKeyListRelationFilterSchema } from './AuthKeyListRelationFilterSchema';
 import { DogListRelationFilterSchema } from './DogListRelationFilterSchema';
 import { TrickListRelationFilterSchema } from './TrickListRelationFilterSchema';
+import { TrainingLogListRelationFilterSchema } from './TrainingLogListRelationFilterSchema';
 
 export const AuthUserWhereInputSchema: z.ZodType<Prisma.AuthUserWhereInput> = z.object({
   AND: z.union([ z.lazy(() => AuthUserWhereInputSchema),z.lazy(() => AuthUserWhereInputSchema).array() ]).optional(),
@@ -20,7 +21,8 @@ export const AuthUserWhereInputSchema: z.ZodType<Prisma.AuthUserWhereInput> = z.
   auth_session: z.lazy(() => AuthSessionListRelationFilterSchema).optional(),
   auth_key: z.lazy(() => AuthKeyListRelationFilterSchema).optional(),
   dogs: z.lazy(() => DogListRelationFilterSchema).optional(),
-  tricks: z.lazy(() => TrickListRelationFilterSchema).optional()
+  tricks: z.lazy(() => TrickListRelationFilterSchema).optional(),
+  TrainingLog: z.lazy(() => TrainingLogListRelationFilterSchema).optional()
 }).strict();
 
 export default AuthUserWhereInputSchema;

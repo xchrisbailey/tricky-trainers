@@ -9,6 +9,7 @@ import { AuthSessionFindManyArgsSchema } from "../outputTypeSchemas/AuthSessionF
 import { AuthKeyFindManyArgsSchema } from "../outputTypeSchemas/AuthKeyFindManyArgsSchema"
 import { DogFindManyArgsSchema } from "../outputTypeSchemas/DogFindManyArgsSchema"
 import { TrickFindManyArgsSchema } from "../outputTypeSchemas/TrickFindManyArgsSchema"
+import { TrainingLogFindManyArgsSchema } from "../outputTypeSchemas/TrainingLogFindManyArgsSchema"
 import { AuthUserCountOutputTypeArgsSchema } from "../outputTypeSchemas/AuthUserCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
@@ -23,6 +24,7 @@ export const AuthUserSelectSchema: z.ZodType<Prisma.AuthUserSelect> = z.object({
   auth_key: z.union([z.boolean(),z.lazy(() => AuthKeyFindManyArgsSchema)]).optional(),
   dogs: z.union([z.boolean(),z.lazy(() => DogFindManyArgsSchema)]).optional(),
   tricks: z.union([z.boolean(),z.lazy(() => TrickFindManyArgsSchema)]).optional(),
+  TrainingLog: z.union([z.boolean(),z.lazy(() => TrainingLogFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => AuthUserCountOutputTypeArgsSchema)]).optional(),
 }).strict()
 

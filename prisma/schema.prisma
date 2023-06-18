@@ -26,6 +26,7 @@ model AuthUser {
   role         Role          @default(USER)
   dogs         Dog[]
   tricks       Trick[]
+  TrainingLog  TrainingLog[]
 
   @@map("auth_user")
 }
@@ -59,23 +60,45 @@ model AuthKey {
 }
 
 model Dog {
-  id         String    @id @default(cuid())
-  name       String
-  flare      String
-  breed      String
-  age_years  Int
-  age_months Int
-  AuthUser   AuthUser? @relation(fields: [user_id], references: [id])
-  user_id    String?
+  id          String        @id @default(cuid())
+  name        String
+  flare       String
+  breed       String
+  age_years   Int
+  age_months  Int
+  AuthUser    AuthUser?     @relation(fields: [user_id], references: [id])
+  user_id     String?
+  TrainingLog TrainingLog[]
 }
 
 model Trick {
-  id          String    @id @default(cuid())
-  name        String    @unique
-  description String
-  example     String    @unique
-  difficulty  Int
-  User        AuthUser? @relation(fields: [added_by], references: [id])
-  added_by    String
-  created_on  DateTime  @default(now())
+  id               String             @id @default(cuid())
+  name             String             @unique
+  description      String
+  example          String             @unique
+  difficulty       Int
+  User             AuthUser?          @relation(fields: [added_by], references: [id])
+  added_by         String
+  created_on       DateTime           @default(now())
+  TrainingLogTrick TrainingLogTrick[]
+}
+
+model TrainingLog {
+  id               String             @id @default(cuid())
+  dog              Dog                @relation(fields: [dog_id], references: [id])
+  dog_id           String
+  user             AuthUser           @relation(fields: [user_id], references: [id])
+  user_id          String
+  TrainingLogTrick TrainingLogTrick[]
+}
+
+model TrainingLogTrick {
+  trick         Trick       @relation(fields: [trick_id], references: [id])
+  training_log  TrainingLog @relation(fields: [log_id], references: [id])
+  trick_id      String
+  log_id        String
+  understanding Int         @default(1)
+  notes         String?
+
+  @@id([trick_id, log_id])
 }

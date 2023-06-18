@@ -7,6 +7,7 @@ import { AuthSessionUpdateManyWithoutAuth_userNestedInputSchema } from './AuthSe
 import { AuthKeyUpdateManyWithoutAuth_userNestedInputSchema } from './AuthKeyUpdateManyWithoutAuth_userNestedInputSchema';
 import { DogUpdateManyWithoutAuthUserNestedInputSchema } from './DogUpdateManyWithoutAuthUserNestedInputSchema';
 import { TrickUpdateManyWithoutUserNestedInputSchema } from './TrickUpdateManyWithoutUserNestedInputSchema';
+import { TrainingLogUpdateManyWithoutUserNestedInputSchema } from './TrainingLogUpdateManyWithoutUserNestedInputSchema';
 
 export const AuthUserUpdateInputSchema: z.ZodType<Prisma.AuthUserUpdateInput> = z.object({
   id: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
@@ -17,7 +18,8 @@ export const AuthUserUpdateInputSchema: z.ZodType<Prisma.AuthUserUpdateInput> = 
   auth_session: z.lazy(() => AuthSessionUpdateManyWithoutAuth_userNestedInputSchema).optional(),
   auth_key: z.lazy(() => AuthKeyUpdateManyWithoutAuth_userNestedInputSchema).optional(),
   dogs: z.lazy(() => DogUpdateManyWithoutAuthUserNestedInputSchema).optional(),
-  tricks: z.lazy(() => TrickUpdateManyWithoutUserNestedInputSchema).optional()
+  tricks: z.lazy(() => TrickUpdateManyWithoutUserNestedInputSchema).optional(),
+  TrainingLog: z.lazy(() => TrainingLogUpdateManyWithoutUserNestedInputSchema).optional()
 }).strict();
 
 export default AuthUserUpdateInputSchema;

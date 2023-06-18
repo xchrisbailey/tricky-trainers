@@ -1,6 +1,7 @@
 import type { Prisma } from '@prisma/client';
 import { z } from 'zod';
 import { AuthUserCreateNestedOneWithoutDogsInputSchema } from './AuthUserCreateNestedOneWithoutDogsInputSchema';
+import { TrainingLogCreateNestedManyWithoutDogInputSchema } from './TrainingLogCreateNestedManyWithoutDogInputSchema';
 
 export const DogCreateInputSchema: z.ZodType<Prisma.DogCreateInput> = z.object({
   id: z.string().cuid().optional(),
@@ -9,7 +10,8 @@ export const DogCreateInputSchema: z.ZodType<Prisma.DogCreateInput> = z.object({
   breed: z.string(),
   age_years: z.number().int(),
   age_months: z.number().int(),
-  AuthUser: z.lazy(() => AuthUserCreateNestedOneWithoutDogsInputSchema).optional()
+  AuthUser: z.lazy(() => AuthUserCreateNestedOneWithoutDogsInputSchema).optional(),
+  TrainingLog: z.lazy(() => TrainingLogCreateNestedManyWithoutDogInputSchema).optional()
 }).strict();
 
 export default DogCreateInputSchema;

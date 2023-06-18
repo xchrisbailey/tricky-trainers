@@ -5,6 +5,7 @@ import { AuthSessionOrderByRelationAggregateInputSchema } from './AuthSessionOrd
 import { AuthKeyOrderByRelationAggregateInputSchema } from './AuthKeyOrderByRelationAggregateInputSchema';
 import { DogOrderByRelationAggregateInputSchema } from './DogOrderByRelationAggregateInputSchema';
 import { TrickOrderByRelationAggregateInputSchema } from './TrickOrderByRelationAggregateInputSchema';
+import { TrainingLogOrderByRelationAggregateInputSchema } from './TrainingLogOrderByRelationAggregateInputSchema';
 
 export const AuthUserOrderByWithRelationInputSchema: z.ZodType<Prisma.AuthUserOrderByWithRelationInput> = z.object({
   id: z.lazy(() => SortOrderSchema).optional(),
@@ -15,7 +16,8 @@ export const AuthUserOrderByWithRelationInputSchema: z.ZodType<Prisma.AuthUserOr
   auth_session: z.lazy(() => AuthSessionOrderByRelationAggregateInputSchema).optional(),
   auth_key: z.lazy(() => AuthKeyOrderByRelationAggregateInputSchema).optional(),
   dogs: z.lazy(() => DogOrderByRelationAggregateInputSchema).optional(),
-  tricks: z.lazy(() => TrickOrderByRelationAggregateInputSchema).optional()
+  tricks: z.lazy(() => TrickOrderByRelationAggregateInputSchema).optional(),
+  TrainingLog: z.lazy(() => TrainingLogOrderByRelationAggregateInputSchema).optional()
 }).strict();
 
 export default AuthUserOrderByWithRelationInputSchema;

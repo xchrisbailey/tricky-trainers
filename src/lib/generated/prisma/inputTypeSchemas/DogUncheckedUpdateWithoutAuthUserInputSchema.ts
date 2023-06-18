@@ -2,6 +2,7 @@ import type { Prisma } from '@prisma/client';
 import { z } from 'zod';
 import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
 import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema';
+import { TrainingLogUncheckedUpdateManyWithoutDogNestedInputSchema } from './TrainingLogUncheckedUpdateManyWithoutDogNestedInputSchema';
 
 export const DogUncheckedUpdateWithoutAuthUserInputSchema: z.ZodType<Prisma.DogUncheckedUpdateWithoutAuthUserInput> = z.object({
   id: z.union([ z.string().cuid(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
@@ -10,6 +11,7 @@ export const DogUncheckedUpdateWithoutAuthUserInputSchema: z.ZodType<Prisma.DogU
   breed: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   age_years: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),
   age_months: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),
+  TrainingLog: z.lazy(() => TrainingLogUncheckedUpdateManyWithoutDogNestedInputSchema).optional()
 }).strict();
 
 export default DogUncheckedUpdateWithoutAuthUserInputSchema;

@@ -5,6 +5,7 @@ import { AuthSessionCreateNestedManyWithoutAuth_userInputSchema } from './AuthSe
 import { AuthKeyCreateNestedManyWithoutAuth_userInputSchema } from './AuthKeyCreateNestedManyWithoutAuth_userInputSchema';
 import { DogCreateNestedManyWithoutAuthUserInputSchema } from './DogCreateNestedManyWithoutAuthUserInputSchema';
 import { TrickCreateNestedManyWithoutUserInputSchema } from './TrickCreateNestedManyWithoutUserInputSchema';
+import { TrainingLogCreateNestedManyWithoutUserInputSchema } from './TrainingLogCreateNestedManyWithoutUserInputSchema';
 
 export const AuthUserCreateInputSchema: z.ZodType<Prisma.AuthUserCreateInput> = z.object({
   id: z.string(),
@@ -15,7 +16,8 @@ export const AuthUserCreateInputSchema: z.ZodType<Prisma.AuthUserCreateInput> = 
   auth_session: z.lazy(() => AuthSessionCreateNestedManyWithoutAuth_userInputSchema).optional(),
   auth_key: z.lazy(() => AuthKeyCreateNestedManyWithoutAuth_userInputSchema).optional(),
   dogs: z.lazy(() => DogCreateNestedManyWithoutAuthUserInputSchema).optional(),
-  tricks: z.lazy(() => TrickCreateNestedManyWithoutUserInputSchema).optional()
+  tricks: z.lazy(() => TrickCreateNestedManyWithoutUserInputSchema).optional(),
+  TrainingLog: z.lazy(() => TrainingLogCreateNestedManyWithoutUserInputSchema).optional()
 }).strict();
 
 export default AuthUserCreateInputSchema;

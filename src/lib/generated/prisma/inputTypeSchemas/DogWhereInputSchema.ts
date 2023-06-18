@@ -5,6 +5,7 @@ import { IntFilterSchema } from './IntFilterSchema';
 import { StringNullableFilterSchema } from './StringNullableFilterSchema';
 import { AuthUserRelationFilterSchema } from './AuthUserRelationFilterSchema';
 import { AuthUserWhereInputSchema } from './AuthUserWhereInputSchema';
+import { TrainingLogListRelationFilterSchema } from './TrainingLogListRelationFilterSchema';
 
 export const DogWhereInputSchema: z.ZodType<Prisma.DogWhereInput> = z.object({
   AND: z.union([ z.lazy(() => DogWhereInputSchema),z.lazy(() => DogWhereInputSchema).array() ]).optional(),
@@ -18,6 +19,7 @@ export const DogWhereInputSchema: z.ZodType<Prisma.DogWhereInput> = z.object({
   age_months: z.union([ z.lazy(() => IntFilterSchema),z.number() ]).optional(),
   user_id: z.union([ z.lazy(() => StringNullableFilterSchema),z.string() ]).optional().nullable(),
   AuthUser: z.union([ z.lazy(() => AuthUserRelationFilterSchema),z.lazy(() => AuthUserWhereInputSchema) ]).optional().nullable(),
+  TrainingLog: z.lazy(() => TrainingLogListRelationFilterSchema).optional()
 }).strict();
 
 export default DogWhereInputSchema;

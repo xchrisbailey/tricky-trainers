@@ -5,6 +5,7 @@ import { IntFilterSchema } from './IntFilterSchema';
 import { DateTimeFilterSchema } from './DateTimeFilterSchema';
 import { AuthUserRelationFilterSchema } from './AuthUserRelationFilterSchema';
 import { AuthUserWhereInputSchema } from './AuthUserWhereInputSchema';
+import { TrainingLogTrickListRelationFilterSchema } from './TrainingLogTrickListRelationFilterSchema';
 
 export const TrickWhereInputSchema: z.ZodType<Prisma.TrickWhereInput> = z.object({
   AND: z.union([ z.lazy(() => TrickWhereInputSchema),z.lazy(() => TrickWhereInputSchema).array() ]).optional(),
@@ -18,6 +19,7 @@ export const TrickWhereInputSchema: z.ZodType<Prisma.TrickWhereInput> = z.object
   added_by: z.union([ z.lazy(() => StringFilterSchema),z.string() ]).optional(),
   created_on: z.union([ z.lazy(() => DateTimeFilterSchema),z.coerce.date() ]).optional(),
   User: z.union([ z.lazy(() => AuthUserRelationFilterSchema),z.lazy(() => AuthUserWhereInputSchema) ]).optional().nullable(),
+  TrainingLogTrick: z.lazy(() => TrainingLogTrickListRelationFilterSchema).optional()
 }).strict();
 
 export default TrickWhereInputSchema;

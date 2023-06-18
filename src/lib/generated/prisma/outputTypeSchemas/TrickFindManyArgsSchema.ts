@@ -6,6 +6,7 @@ import { TrickOrderByWithRelationInputSchema } from '../inputTypeSchemas/TrickOr
 import { TrickWhereUniqueInputSchema } from '../inputTypeSchemas/TrickWhereUniqueInputSchema'
 import { TrickScalarFieldEnumSchema } from '../inputTypeSchemas/TrickScalarFieldEnumSchema'
 import { AuthUserArgsSchema } from "../outputTypeSchemas/AuthUserArgsSchema"
+import { TrickCountOutputTypeArgsSchema } from "../outputTypeSchemas/TrickCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 
@@ -18,6 +19,8 @@ export const TrickSelectSchema: z.ZodType<Prisma.TrickSelect> = z.object({
   added_by: z.boolean().optional(),
   created_on: z.boolean().optional(),
   User: z.union([z.boolean(),z.lazy(() => AuthUserArgsSchema)]).optional(),
+  TrainingLogTrick: z.union([z.boolean(),z.lazy(() => TrainingLogTrickFindManyArgsSchema)]).optional(),
+  _count: z.union([z.boolean(),z.lazy(() => TrickCountOutputTypeArgsSchema)]).optional(),
 }).strict()
 
 export const TrickFindManyArgsSchema: z.ZodType<Prisma.TrickFindManyArgs> = z.object({

@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOperationsInputSchema';
 import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsInputSchema';
 import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
+import { TrainingLogTrickUpdateManyWithoutTrickNestedInputSchema } from './TrainingLogTrickUpdateManyWithoutTrickNestedInputSchema';
 
 export const TrickUpdateWithoutUserInputSchema: z.ZodType<Prisma.TrickUpdateWithoutUserInput> = z.object({
   id: z.union([ z.string().cuid(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
@@ -11,6 +12,7 @@ export const TrickUpdateWithoutUserInputSchema: z.ZodType<Prisma.TrickUpdateWith
   example: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   difficulty: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),
   created_on: z.union([ z.coerce.date(),z.lazy(() => DateTimeFieldUpdateOperationsInputSchema) ]).optional(),
+  TrainingLogTrick: z.lazy(() => TrainingLogTrickUpdateManyWithoutTrickNestedInputSchema).optional()
 }).strict();
 
 export default TrickUpdateWithoutUserInputSchema;

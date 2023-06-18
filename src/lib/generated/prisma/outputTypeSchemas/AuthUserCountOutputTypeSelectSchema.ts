@@ -6,6 +6,7 @@ export const AuthUserCountOutputTypeSelectSchema: z.ZodType<Prisma.AuthUserCount
   auth_key: z.boolean().optional(),
   dogs: z.boolean().optional(),
   tricks: z.boolean().optional(),
+  TrainingLog: z.boolean().optional(),
 }).strict();
 
 export default AuthUserCountOutputTypeSelectSchema;

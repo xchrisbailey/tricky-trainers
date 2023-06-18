@@ -6,6 +6,7 @@ import { EnumRoleFieldUpdateOperationsInputSchema } from './EnumRoleFieldUpdateO
 import { AuthSessionUncheckedUpdateManyWithoutAuth_userNestedInputSchema } from './AuthSessionUncheckedUpdateManyWithoutAuth_userNestedInputSchema';
 import { AuthKeyUncheckedUpdateManyWithoutAuth_userNestedInputSchema } from './AuthKeyUncheckedUpdateManyWithoutAuth_userNestedInputSchema';
 import { TrickUncheckedUpdateManyWithoutUserNestedInputSchema } from './TrickUncheckedUpdateManyWithoutUserNestedInputSchema';
+import { TrainingLogUncheckedUpdateManyWithoutUserNestedInputSchema } from './TrainingLogUncheckedUpdateManyWithoutUserNestedInputSchema';
 
 export const AuthUserUncheckedUpdateWithoutDogsInputSchema: z.ZodType<Prisma.AuthUserUncheckedUpdateWithoutDogsInput> = z.object({
   id: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
@@ -15,7 +16,8 @@ export const AuthUserUncheckedUpdateWithoutDogsInputSchema: z.ZodType<Prisma.Aut
   role: z.union([ z.lazy(() => RoleSchema),z.lazy(() => EnumRoleFieldUpdateOperationsInputSchema) ]).optional(),
   auth_session: z.lazy(() => AuthSessionUncheckedUpdateManyWithoutAuth_userNestedInputSchema).optional(),
   auth_key: z.lazy(() => AuthKeyUncheckedUpdateManyWithoutAuth_userNestedInputSchema).optional(),
-  tricks: z.lazy(() => TrickUncheckedUpdateManyWithoutUserNestedInputSchema).optional()
+  tricks: z.lazy(() => TrickUncheckedUpdateManyWithoutUserNestedInputSchema).optional(),
+  TrainingLog: z.lazy(() => TrainingLogUncheckedUpdateManyWithoutUserNestedInputSchema).optional()
 }).strict();
 
 export default AuthUserUncheckedUpdateWithoutDogsInputSchema;

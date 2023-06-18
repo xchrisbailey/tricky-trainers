@@ -4,6 +4,8 @@ import { TrickIncludeSchema } from '../inputTypeSchemas/TrickIncludeSchema'
 import { TrickCreateInputSchema } from '../inputTypeSchemas/TrickCreateInputSchema'
 import { TrickUncheckedCreateInputSchema } from '../inputTypeSchemas/TrickUncheckedCreateInputSchema'
 import { AuthUserArgsSchema } from "../outputTypeSchemas/AuthUserArgsSchema"
+import { TrainingLogTrickFindManyArgsSchema } from "../outputTypeSchemas/TrainingLogTrickFindManyArgsSchema"
+import { TrickCountOutputTypeArgsSchema } from "../outputTypeSchemas/TrickCountOutputTypeArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 
@@ -16,6 +18,8 @@ export const TrickSelectSchema: z.ZodType<Prisma.TrickSelect> = z.object({
   added_by: z.boolean().optional(),
   created_on: z.boolean().optional(),
   User: z.union([z.boolean(),z.lazy(() => AuthUserArgsSchema)]).optional(),
+  TrainingLogTrick: z.union([z.boolean(),z.lazy(() => TrainingLogTrickFindManyArgsSchema)]).optional(),
+  _count: z.union([z.boolean(),z.lazy(() => TrickCountOutputTypeArgsSchema)]).optional(),
 }).strict()
 
 export const TrickCreateArgsSchema: z.ZodType<Prisma.TrickCreateArgs> = z.object({
