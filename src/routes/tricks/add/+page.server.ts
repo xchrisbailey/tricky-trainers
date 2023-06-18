@@ -1,8 +1,15 @@
 import { db } from '$lib/db';
-import { new_trick_schema } from '$lib/schemas/trick';
 import { fail, redirect } from '@sveltejs/kit';
 import { superValidate } from 'sveltekit-superforms/server';
 import type { Actions, PageServerLoad } from './$types';
+import TrickSchema from '$lib/generated/prisma/modelSchema/TrickSchema';
+
+const new_trick_schema = TrickSchema.pick({
+  name: true,
+  example: true,
+  description: true,
+  difficulty: true
+});
 
 export const load: PageServerLoad = async ({ locals }) => {
   const { user } = await locals.auth.validateUser();

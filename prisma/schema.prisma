@@ -6,8 +6,9 @@ generator client {
 }
 
 generator zod {
-  provider = "prisma-zod-generator"
-  output   = "../src/lib/generated/"
+  provider         = "zod-prisma-types"
+  useMultipleFiles = true
+  output           = "../src/lib/generated/prisma"
 }
 
 datasource db {

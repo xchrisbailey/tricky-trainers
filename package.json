@@ -49,6 +49,7 @@
     "lucia-auth": "^1.8.0",
     "pg": "^8.11.0",
     "postgres": "^3.3.5",
-    "prisma-zod-generator": "^0.8.13"
+    "prisma-zod-generator": "^0.8.13",
+    "zod-prisma-types": "^2.7.4"
   }
 }

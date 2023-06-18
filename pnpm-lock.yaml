@@ -26,6 +26,9 @@ dependencies:
   prisma-zod-generator:
     specifier: ^0.8.13
     version: 0.8.13(prisma@4.15.0)
+  zod-prisma-types:
+    specifier: ^2.7.4
+    version: 2.7.4
 
 devDependencies:
   '@skeletonlabs/skeleton':
@@ -1201,6 +1204,10 @@ packages:
       string-width: 4.2.3
     dev: false
 
+  /code-block-writer@11.0.3:
+    resolution: {integrity: sha512-NiujjUFB4SwScJq2bwbYUtXbZhBSlY6vYzm++3Q6oC+U+injTqfPYFK8wS9COOmb2lueqp0ZRB4nK1VYeHgNyw==}
+    dev: false
+
   /color-convert@1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
     dependencies:
@@ -2089,6 +2096,10 @@ packages:
 
   /lodash.union@4.6.0:
     resolution: {integrity: sha512-c4pB2CdGrGdjMKYLA+XiRDO7Y0PRQbm/Gzg8qMj+QH+pFVAoTp5sBpO0odL3FjoPCGjK96p6qsP+yQoiLoOBcw==}
+    dev: false
+
+  /lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: false
 
   /lru-cache@6.0.0:
@@ -3566,6 +3577,18 @@ packages:
       archiver-utils: 2.1.0
       compress-commons: 4.1.1
       readable-stream: 3.6.2
+    dev: false
+
+  /zod-prisma-types@2.7.4:
+    resolution: {integrity: sha512-D+mUndT6r/H9E9ZMtA9+A1WfHHrluWwRqcBq0ayw5EHax8WBuDStgkdw1H6pWMW06AtKd95Yv2ugY3Y/exSeFw==}
+    hasBin: true
+    dependencies:
+      '@prisma/generator-helper': 4.15.0
+      code-block-writer: 11.0.3
+      lodash: 4.17.21
+      zod: 3.21.4
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /zod@3.21.4:
