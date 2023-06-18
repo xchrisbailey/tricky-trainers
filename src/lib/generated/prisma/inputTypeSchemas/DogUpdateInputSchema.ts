@@ -12,7 +12,7 @@ export const DogUpdateInputSchema: z.ZodType<Prisma.DogUpdateInput> = z.object({
   breed: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   age_years: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),
   age_months: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),
-  AuthUser: z.lazy(() => AuthUserUpdateOneWithoutDogsNestedInputSchema).optional(),
+  User: z.lazy(() => AuthUserUpdateOneWithoutDogsNestedInputSchema).optional(),
   TrainingLog: z.lazy(() => TrainingLogUpdateManyWithoutDogNestedInputSchema).optional()
 }).strict();
 

@@ -38,7 +38,7 @@ export const actions = {
       await db.dog.create({
         data: {
           ...form.data,
-          AuthUser: {
+          User: {
             connect: {
               id: user.userId
             }

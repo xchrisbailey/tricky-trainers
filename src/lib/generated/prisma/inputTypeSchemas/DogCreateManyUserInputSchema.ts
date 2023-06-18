@@ -1,7 +1,7 @@
 import type { Prisma } from '@prisma/client';
 import { z } from 'zod';
 
-export const DogCreateManyAuthUserInputSchema: z.ZodType<Prisma.DogCreateManyAuthUserInput> = z.object({
+export const DogCreateManyUserInputSchema: z.ZodType<Prisma.DogCreateManyUserInput> = z.object({
   id: z.string().cuid().optional(),
   name: z.string(),
   flare: z.string(),
@@ -10,4 +10,4 @@ export const DogCreateManyAuthUserInputSchema: z.ZodType<Prisma.DogCreateManyAut
   age_months: z.number().int()
 }).strict();
 
-export default DogCreateManyAuthUserInputSchema;
+export default DogCreateManyUserInputSchema;

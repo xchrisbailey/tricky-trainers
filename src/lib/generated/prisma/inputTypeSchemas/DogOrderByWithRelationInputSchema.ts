@@ -12,7 +12,7 @@ export const DogOrderByWithRelationInputSchema: z.ZodType<Prisma.DogOrderByWithR
   age_years: z.lazy(() => SortOrderSchema).optional(),
   age_months: z.lazy(() => SortOrderSchema).optional(),
   user_id: z.lazy(() => SortOrderSchema).optional(),
-  AuthUser: z.lazy(() => AuthUserOrderByWithRelationInputSchema).optional(),
+  User: z.lazy(() => AuthUserOrderByWithRelationInputSchema).optional(),
   TrainingLog: z.lazy(() => TrainingLogOrderByRelationAggregateInputSchema).optional()
 }).strict();
 

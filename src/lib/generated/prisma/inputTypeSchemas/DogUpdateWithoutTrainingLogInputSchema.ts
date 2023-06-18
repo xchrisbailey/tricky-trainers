@@ -11,7 +11,7 @@ export const DogUpdateWithoutTrainingLogInputSchema: z.ZodType<Prisma.DogUpdateW
   breed: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   age_years: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),
   age_months: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),
-  AuthUser: z.lazy(() => AuthUserUpdateOneWithoutDogsNestedInputSchema).optional()
+  User: z.lazy(() => AuthUserUpdateOneWithoutDogsNestedInputSchema).optional()
 }).strict();
 
 export default DogUpdateWithoutTrainingLogInputSchema;

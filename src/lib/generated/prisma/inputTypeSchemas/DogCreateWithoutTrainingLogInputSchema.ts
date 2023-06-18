@@ -9,7 +9,7 @@ export const DogCreateWithoutTrainingLogInputSchema: z.ZodType<Prisma.DogCreateW
   breed: z.string(),
   age_years: z.number().int(),
   age_months: z.number().int(),
-  AuthUser: z.lazy(() => AuthUserCreateNestedOneWithoutDogsInputSchema).optional()
+  User: z.lazy(() => AuthUserCreateNestedOneWithoutDogsInputSchema).optional()
 }).strict();
 
 export default DogCreateWithoutTrainingLogInputSchema;

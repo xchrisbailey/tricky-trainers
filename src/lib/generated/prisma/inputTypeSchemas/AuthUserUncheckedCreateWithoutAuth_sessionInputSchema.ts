@@ -2,7 +2,7 @@ import type { Prisma } from '@prisma/client';
 import { z } from 'zod';
 import { RoleSchema } from './RoleSchema';
 import { AuthKeyUncheckedCreateNestedManyWithoutAuth_userInputSchema } from './AuthKeyUncheckedCreateNestedManyWithoutAuth_userInputSchema';
-import { DogUncheckedCreateNestedManyWithoutAuthUserInputSchema } from './DogUncheckedCreateNestedManyWithoutAuthUserInputSchema';
+import { DogUncheckedCreateNestedManyWithoutUserInputSchema } from './DogUncheckedCreateNestedManyWithoutUserInputSchema';
 import { TrickUncheckedCreateNestedManyWithoutUserInputSchema } from './TrickUncheckedCreateNestedManyWithoutUserInputSchema';
 import { TrainingLogUncheckedCreateNestedManyWithoutUserInputSchema } from './TrainingLogUncheckedCreateNestedManyWithoutUserInputSchema';
 
@@ -13,7 +13,7 @@ export const AuthUserUncheckedCreateWithoutAuth_sessionInputSchema: z.ZodType<Pr
   last_name: z.string(),
   role: z.lazy(() => RoleSchema).optional(),
   auth_key: z.lazy(() => AuthKeyUncheckedCreateNestedManyWithoutAuth_userInputSchema).optional(),
-  dogs: z.lazy(() => DogUncheckedCreateNestedManyWithoutAuthUserInputSchema).optional(),
+  dogs: z.lazy(() => DogUncheckedCreateNestedManyWithoutUserInputSchema).optional(),
   tricks: z.lazy(() => TrickUncheckedCreateNestedManyWithoutUserInputSchema).optional(),
   TrainingLog: z.lazy(() => TrainingLogUncheckedCreateNestedManyWithoutUserInputSchema).optional()
 }).strict();

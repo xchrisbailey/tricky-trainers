@@ -19,7 +19,7 @@ export const DogSelectSchema: z.ZodType<Prisma.DogSelect> = z.object({
   age_years: z.boolean().optional(),
   age_months: z.boolean().optional(),
   user_id: z.boolean().optional(),
-  AuthUser: z.union([z.boolean(),z.lazy(() => AuthUserArgsSchema)]).optional(),
+  User: z.union([z.boolean(),z.lazy(() => AuthUserArgsSchema)]).optional(),
   TrainingLog: z.union([z.boolean(),z.lazy(() => TrainingLogFindManyArgsSchema)]).optional(),
   _count: z.union([z.boolean(),z.lazy(() => DogCountOutputTypeArgsSchema)]).optional(),
 }).strict()

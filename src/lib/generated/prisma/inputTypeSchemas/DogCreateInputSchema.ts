@@ -10,7 +10,7 @@ export const DogCreateInputSchema: z.ZodType<Prisma.DogCreateInput> = z.object({
   breed: z.string(),
   age_years: z.number().int(),
   age_months: z.number().int(),
-  AuthUser: z.lazy(() => AuthUserCreateNestedOneWithoutDogsInputSchema).optional(),
+  User: z.lazy(() => AuthUserCreateNestedOneWithoutDogsInputSchema).optional(),
   TrainingLog: z.lazy(() => TrainingLogCreateNestedManyWithoutDogInputSchema).optional()
 }).strict();
 

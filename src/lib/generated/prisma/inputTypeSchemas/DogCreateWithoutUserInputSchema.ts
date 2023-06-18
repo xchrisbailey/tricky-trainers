@@ -2,7 +2,7 @@ import type { Prisma } from '@prisma/client';
 import { z } from 'zod';
 import { TrainingLogCreateNestedManyWithoutDogInputSchema } from './TrainingLogCreateNestedManyWithoutDogInputSchema';
 
-export const DogCreateWithoutAuthUserInputSchema: z.ZodType<Prisma.DogCreateWithoutAuthUserInput> = z.object({
+export const DogCreateWithoutUserInputSchema: z.ZodType<Prisma.DogCreateWithoutUserInput> = z.object({
   id: z.string().cuid().optional(),
   name: z.string(),
   flare: z.string(),
@@ -12,4 +12,4 @@ export const DogCreateWithoutAuthUserInputSchema: z.ZodType<Prisma.DogCreateWith
   TrainingLog: z.lazy(() => TrainingLogCreateNestedManyWithoutDogInputSchema).optional()
 }).strict();
 
-export default DogCreateWithoutAuthUserInputSchema;
+export default DogCreateWithoutUserInputSchema;

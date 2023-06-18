@@ -5,7 +5,7 @@ import { RoleSchema } from './RoleSchema';
 import { EnumRoleFieldUpdateOperationsInputSchema } from './EnumRoleFieldUpdateOperationsInputSchema';
 import { AuthSessionUpdateManyWithoutAuth_userNestedInputSchema } from './AuthSessionUpdateManyWithoutAuth_userNestedInputSchema';
 import { AuthKeyUpdateManyWithoutAuth_userNestedInputSchema } from './AuthKeyUpdateManyWithoutAuth_userNestedInputSchema';
-import { DogUpdateManyWithoutAuthUserNestedInputSchema } from './DogUpdateManyWithoutAuthUserNestedInputSchema';
+import { DogUpdateManyWithoutUserNestedInputSchema } from './DogUpdateManyWithoutUserNestedInputSchema';
 import { TrickUpdateManyWithoutUserNestedInputSchema } from './TrickUpdateManyWithoutUserNestedInputSchema';
 import { TrainingLogUpdateManyWithoutUserNestedInputSchema } from './TrainingLogUpdateManyWithoutUserNestedInputSchema';
 
@@ -17,7 +17,7 @@ export const AuthUserUpdateInputSchema: z.ZodType<Prisma.AuthUserUpdateInput> = 
   role: z.union([ z.lazy(() => RoleSchema),z.lazy(() => EnumRoleFieldUpdateOperationsInputSchema) ]).optional(),
   auth_session: z.lazy(() => AuthSessionUpdateManyWithoutAuth_userNestedInputSchema).optional(),
   auth_key: z.lazy(() => AuthKeyUpdateManyWithoutAuth_userNestedInputSchema).optional(),
-  dogs: z.lazy(() => DogUpdateManyWithoutAuthUserNestedInputSchema).optional(),
+  dogs: z.lazy(() => DogUpdateManyWithoutUserNestedInputSchema).optional(),
   tricks: z.lazy(() => TrickUpdateManyWithoutUserNestedInputSchema).optional(),
   TrainingLog: z.lazy(() => TrainingLogUpdateManyWithoutUserNestedInputSchema).optional()
 }).strict();

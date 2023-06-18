@@ -18,7 +18,7 @@ export const DogWhereInputSchema: z.ZodType<Prisma.DogWhereInput> = z.object({
   age_years: z.union([ z.lazy(() => IntFilterSchema),z.number() ]).optional(),
   age_months: z.union([ z.lazy(() => IntFilterSchema),z.number() ]).optional(),
   user_id: z.union([ z.lazy(() => StringNullableFilterSchema),z.string() ]).optional().nullable(),
-  AuthUser: z.union([ z.lazy(() => AuthUserRelationFilterSchema),z.lazy(() => AuthUserWhereInputSchema) ]).optional().nullable(),
+  User: z.union([ z.lazy(() => AuthUserRelationFilterSchema),z.lazy(() => AuthUserWhereInputSchema) ]).optional().nullable(),
   TrainingLog: z.lazy(() => TrainingLogListRelationFilterSchema).optional()
 }).strict();
 

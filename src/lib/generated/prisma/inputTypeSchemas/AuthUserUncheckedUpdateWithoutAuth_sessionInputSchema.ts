@@ -4,7 +4,7 @@ import { StringFieldUpdateOperationsInputSchema } from './StringFieldUpdateOpera
 import { RoleSchema } from './RoleSchema';
 import { EnumRoleFieldUpdateOperationsInputSchema } from './EnumRoleFieldUpdateOperationsInputSchema';
 import { AuthKeyUncheckedUpdateManyWithoutAuth_userNestedInputSchema } from './AuthKeyUncheckedUpdateManyWithoutAuth_userNestedInputSchema';
-import { DogUncheckedUpdateManyWithoutAuthUserNestedInputSchema } from './DogUncheckedUpdateManyWithoutAuthUserNestedInputSchema';
+import { DogUncheckedUpdateManyWithoutUserNestedInputSchema } from './DogUncheckedUpdateManyWithoutUserNestedInputSchema';
 import { TrickUncheckedUpdateManyWithoutUserNestedInputSchema } from './TrickUncheckedUpdateManyWithoutUserNestedInputSchema';
 import { TrainingLogUncheckedUpdateManyWithoutUserNestedInputSchema } from './TrainingLogUncheckedUpdateManyWithoutUserNestedInputSchema';
 
@@ -15,7 +15,7 @@ export const AuthUserUncheckedUpdateWithoutAuth_sessionInputSchema: z.ZodType<Pr
   last_name: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   role: z.union([ z.lazy(() => RoleSchema),z.lazy(() => EnumRoleFieldUpdateOperationsInputSchema) ]).optional(),
   auth_key: z.lazy(() => AuthKeyUncheckedUpdateManyWithoutAuth_userNestedInputSchema).optional(),
-  dogs: z.lazy(() => DogUncheckedUpdateManyWithoutAuthUserNestedInputSchema).optional(),
+  dogs: z.lazy(() => DogUncheckedUpdateManyWithoutUserNestedInputSchema).optional(),
   tricks: z.lazy(() => TrickUncheckedUpdateManyWithoutUserNestedInputSchema).optional(),
   TrainingLog: z.lazy(() => TrainingLogUncheckedUpdateManyWithoutUserNestedInputSchema).optional()
 }).strict();

@@ -66,7 +66,7 @@ model Dog {
   breed       String
   age_years   Int
   age_months  Int
-  AuthUser    AuthUser?     @relation(fields: [user_id], references: [id])
+  User        AuthUser?     @relation(fields: [user_id], references: [id])
   user_id     String?
   TrainingLog TrainingLog[]
 }
