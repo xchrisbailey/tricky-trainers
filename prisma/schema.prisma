@@ -99,6 +99,7 @@ model TrainingLogTrick {
   log_id        String
   understanding Int         @default(1)
   notes         String?
+  train_date    DateTime    @default(now())
 
   @@id([trick_id, log_id])
 }

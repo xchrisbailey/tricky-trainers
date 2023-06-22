@@ -10,18 +10,73 @@ import { AuthKeyUpdateWithWhereUniqueWithoutAuth_userInputSchema } from './AuthK
 import { AuthKeyUpdateManyWithWhereWithoutAuth_userInputSchema } from './AuthKeyUpdateManyWithWhereWithoutAuth_userInputSchema';
 import { AuthKeyScalarWhereInputSchema } from './AuthKeyScalarWhereInputSchema';
 
-export const AuthKeyUpdateManyWithoutAuth_userNestedInputSchema: z.ZodType<Prisma.AuthKeyUpdateManyWithoutAuth_userNestedInput> = z.object({
-  create: z.union([ z.lazy(() => AuthKeyCreateWithoutAuth_userInputSchema),z.lazy(() => AuthKeyCreateWithoutAuth_userInputSchema).array(),z.lazy(() => AuthKeyUncheckedCreateWithoutAuth_userInputSchema),z.lazy(() => AuthKeyUncheckedCreateWithoutAuth_userInputSchema).array() ]).optional(),
-  connectOrCreate: z.union([ z.lazy(() => AuthKeyCreateOrConnectWithoutAuth_userInputSchema),z.lazy(() => AuthKeyCreateOrConnectWithoutAuth_userInputSchema).array() ]).optional(),
-  upsert: z.union([ z.lazy(() => AuthKeyUpsertWithWhereUniqueWithoutAuth_userInputSchema),z.lazy(() => AuthKeyUpsertWithWhereUniqueWithoutAuth_userInputSchema).array() ]).optional(),
-  createMany: z.lazy(() => AuthKeyCreateManyAuth_userInputEnvelopeSchema).optional(),
-  set: z.union([ z.lazy(() => AuthKeyWhereUniqueInputSchema),z.lazy(() => AuthKeyWhereUniqueInputSchema).array() ]).optional(),
-  disconnect: z.union([ z.lazy(() => AuthKeyWhereUniqueInputSchema),z.lazy(() => AuthKeyWhereUniqueInputSchema).array() ]).optional(),
-  delete: z.union([ z.lazy(() => AuthKeyWhereUniqueInputSchema),z.lazy(() => AuthKeyWhereUniqueInputSchema).array() ]).optional(),
-  connect: z.union([ z.lazy(() => AuthKeyWhereUniqueInputSchema),z.lazy(() => AuthKeyWhereUniqueInputSchema).array() ]).optional(),
-  update: z.union([ z.lazy(() => AuthKeyUpdateWithWhereUniqueWithoutAuth_userInputSchema),z.lazy(() => AuthKeyUpdateWithWhereUniqueWithoutAuth_userInputSchema).array() ]).optional(),
-  updateMany: z.union([ z.lazy(() => AuthKeyUpdateManyWithWhereWithoutAuth_userInputSchema),z.lazy(() => AuthKeyUpdateManyWithWhereWithoutAuth_userInputSchema).array() ]).optional(),
-  deleteMany: z.union([ z.lazy(() => AuthKeyScalarWhereInputSchema),z.lazy(() => AuthKeyScalarWhereInputSchema).array() ]).optional(),
-}).strict();
+export const AuthKeyUpdateManyWithoutAuth_userNestedInputSchema: z.ZodType<Prisma.AuthKeyUpdateManyWithoutAuth_userNestedInput> =
+  z
+    .object({
+      create: z
+        .union([
+          z.lazy(() => AuthKeyCreateWithoutAuth_userInputSchema),
+          z.lazy(() => AuthKeyCreateWithoutAuth_userInputSchema).array(),
+          z.lazy(() => AuthKeyUncheckedCreateWithoutAuth_userInputSchema),
+          z.lazy(() => AuthKeyUncheckedCreateWithoutAuth_userInputSchema).array()
+        ])
+        .optional(),
+      connectOrCreate: z
+        .union([
+          z.lazy(() => AuthKeyCreateOrConnectWithoutAuth_userInputSchema),
+          z.lazy(() => AuthKeyCreateOrConnectWithoutAuth_userInputSchema).array()
+        ])
+        .optional(),
+      upsert: z
+        .union([
+          z.lazy(() => AuthKeyUpsertWithWhereUniqueWithoutAuth_userInputSchema),
+          z.lazy(() => AuthKeyUpsertWithWhereUniqueWithoutAuth_userInputSchema).array()
+        ])
+        .optional(),
+      createMany: z.lazy(() => AuthKeyCreateManyAuth_userInputEnvelopeSchema).optional(),
+      set: z
+        .union([
+          z.lazy(() => AuthKeyWhereUniqueInputSchema),
+          z.lazy(() => AuthKeyWhereUniqueInputSchema).array()
+        ])
+        .optional(),
+      disconnect: z
+        .union([
+          z.lazy(() => AuthKeyWhereUniqueInputSchema),
+          z.lazy(() => AuthKeyWhereUniqueInputSchema).array()
+        ])
+        .optional(),
+      delete: z
+        .union([
+          z.lazy(() => AuthKeyWhereUniqueInputSchema),
+          z.lazy(() => AuthKeyWhereUniqueInputSchema).array()
+        ])
+        .optional(),
+      connect: z
+        .union([
+          z.lazy(() => AuthKeyWhereUniqueInputSchema),
+          z.lazy(() => AuthKeyWhereUniqueInputSchema).array()
+        ])
+        .optional(),
+      update: z
+        .union([
+          z.lazy(() => AuthKeyUpdateWithWhereUniqueWithoutAuth_userInputSchema),
+          z.lazy(() => AuthKeyUpdateWithWhereUniqueWithoutAuth_userInputSchema).array()
+        ])
+        .optional(),
+      updateMany: z
+        .union([
+          z.lazy(() => AuthKeyUpdateManyWithWhereWithoutAuth_userInputSchema),
+          z.lazy(() => AuthKeyUpdateManyWithWhereWithoutAuth_userInputSchema).array()
+        ])
+        .optional(),
+      deleteMany: z
+        .union([
+          z.lazy(() => AuthKeyScalarWhereInputSchema),
+          z.lazy(() => AuthKeyScalarWhereInputSchema).array()
+        ])
+        .optional()
+    })
+    .strict();
 
 export default AuthKeyUpdateManyWithoutAuth_userNestedInputSchema;

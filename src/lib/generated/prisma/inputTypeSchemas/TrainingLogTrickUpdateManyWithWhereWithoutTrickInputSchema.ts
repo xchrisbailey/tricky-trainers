@@ -4,9 +4,15 @@ import { TrainingLogTrickScalarWhereInputSchema } from './TrainingLogTrickScalar
 import { TrainingLogTrickUpdateManyMutationInputSchema } from './TrainingLogTrickUpdateManyMutationInputSchema';
 import { TrainingLogTrickUncheckedUpdateManyWithoutTrainingLogTrickInputSchema } from './TrainingLogTrickUncheckedUpdateManyWithoutTrainingLogTrickInputSchema';
 
-export const TrainingLogTrickUpdateManyWithWhereWithoutTrickInputSchema: z.ZodType<Prisma.TrainingLogTrickUpdateManyWithWhereWithoutTrickInput> = z.object({
-  where: z.lazy(() => TrainingLogTrickScalarWhereInputSchema),
-  data: z.union([ z.lazy(() => TrainingLogTrickUpdateManyMutationInputSchema),z.lazy(() => TrainingLogTrickUncheckedUpdateManyWithoutTrainingLogTrickInputSchema) ]),
-}).strict();
+export const TrainingLogTrickUpdateManyWithWhereWithoutTrickInputSchema: z.ZodType<Prisma.TrainingLogTrickUpdateManyWithWhereWithoutTrickInput> =
+  z
+    .object({
+      where: z.lazy(() => TrainingLogTrickScalarWhereInputSchema),
+      data: z.union([
+        z.lazy(() => TrainingLogTrickUpdateManyMutationInputSchema),
+        z.lazy(() => TrainingLogTrickUncheckedUpdateManyWithoutTrainingLogTrickInputSchema)
+      ])
+    })
+    .strict();
 
 export default TrainingLogTrickUpdateManyWithWhereWithoutTrickInputSchema;

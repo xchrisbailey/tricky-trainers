@@ -4,9 +4,15 @@ import { TrainingLogTrickWhereUniqueInputSchema } from './TrainingLogTrickWhereU
 import { TrainingLogTrickCreateWithoutTrickInputSchema } from './TrainingLogTrickCreateWithoutTrickInputSchema';
 import { TrainingLogTrickUncheckedCreateWithoutTrickInputSchema } from './TrainingLogTrickUncheckedCreateWithoutTrickInputSchema';
 
-export const TrainingLogTrickCreateOrConnectWithoutTrickInputSchema: z.ZodType<Prisma.TrainingLogTrickCreateOrConnectWithoutTrickInput> = z.object({
-  where: z.lazy(() => TrainingLogTrickWhereUniqueInputSchema),
-  create: z.union([ z.lazy(() => TrainingLogTrickCreateWithoutTrickInputSchema),z.lazy(() => TrainingLogTrickUncheckedCreateWithoutTrickInputSchema) ]),
-}).strict();
+export const TrainingLogTrickCreateOrConnectWithoutTrickInputSchema: z.ZodType<Prisma.TrainingLogTrickCreateOrConnectWithoutTrickInput> =
+  z
+    .object({
+      where: z.lazy(() => TrainingLogTrickWhereUniqueInputSchema),
+      create: z.union([
+        z.lazy(() => TrainingLogTrickCreateWithoutTrickInputSchema),
+        z.lazy(() => TrainingLogTrickUncheckedCreateWithoutTrickInputSchema)
+      ])
+    })
+    .strict();
 
 export default TrainingLogTrickCreateOrConnectWithoutTrickInputSchema;

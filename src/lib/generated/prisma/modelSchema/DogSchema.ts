@@ -11,9 +11,9 @@ export const DogSchema = z.object({
   breed: z.string(),
   age_years: z.number().int(),
   age_months: z.number().int(),
-  user_id: z.string().nullable(),
-})
+  user_id: z.string().nullable()
+});
 
-export type Dog = z.infer<typeof DogSchema>
+export type Dog = z.infer<typeof DogSchema>;
 
 export default DogSchema;

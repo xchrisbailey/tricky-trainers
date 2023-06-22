@@ -5,10 +5,18 @@ import { DogUncheckedCreateWithoutTrainingLogInputSchema } from './DogUncheckedC
 import { DogCreateOrConnectWithoutTrainingLogInputSchema } from './DogCreateOrConnectWithoutTrainingLogInputSchema';
 import { DogWhereUniqueInputSchema } from './DogWhereUniqueInputSchema';
 
-export const DogCreateNestedOneWithoutTrainingLogInputSchema: z.ZodType<Prisma.DogCreateNestedOneWithoutTrainingLogInput> = z.object({
-  create: z.union([ z.lazy(() => DogCreateWithoutTrainingLogInputSchema),z.lazy(() => DogUncheckedCreateWithoutTrainingLogInputSchema) ]).optional(),
-  connectOrCreate: z.lazy(() => DogCreateOrConnectWithoutTrainingLogInputSchema).optional(),
-  connect: z.lazy(() => DogWhereUniqueInputSchema).optional()
-}).strict();
+export const DogCreateNestedOneWithoutTrainingLogInputSchema: z.ZodType<Prisma.DogCreateNestedOneWithoutTrainingLogInput> =
+  z
+    .object({
+      create: z
+        .union([
+          z.lazy(() => DogCreateWithoutTrainingLogInputSchema),
+          z.lazy(() => DogUncheckedCreateWithoutTrainingLogInputSchema)
+        ])
+        .optional(),
+      connectOrCreate: z.lazy(() => DogCreateOrConnectWithoutTrainingLogInputSchema).optional(),
+      connect: z.lazy(() => DogWhereUniqueInputSchema).optional()
+    })
+    .strict();
 
 export default DogCreateNestedOneWithoutTrainingLogInputSchema;

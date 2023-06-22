@@ -6,10 +6,19 @@ import { AuthSessionUncheckedUpdateWithoutAuth_userInputSchema } from './AuthSes
 import { AuthSessionCreateWithoutAuth_userInputSchema } from './AuthSessionCreateWithoutAuth_userInputSchema';
 import { AuthSessionUncheckedCreateWithoutAuth_userInputSchema } from './AuthSessionUncheckedCreateWithoutAuth_userInputSchema';
 
-export const AuthSessionUpsertWithWhereUniqueWithoutAuth_userInputSchema: z.ZodType<Prisma.AuthSessionUpsertWithWhereUniqueWithoutAuth_userInput> = z.object({
-  where: z.lazy(() => AuthSessionWhereUniqueInputSchema),
-  update: z.union([ z.lazy(() => AuthSessionUpdateWithoutAuth_userInputSchema),z.lazy(() => AuthSessionUncheckedUpdateWithoutAuth_userInputSchema) ]),
-  create: z.union([ z.lazy(() => AuthSessionCreateWithoutAuth_userInputSchema),z.lazy(() => AuthSessionUncheckedCreateWithoutAuth_userInputSchema) ]),
-}).strict();
+export const AuthSessionUpsertWithWhereUniqueWithoutAuth_userInputSchema: z.ZodType<Prisma.AuthSessionUpsertWithWhereUniqueWithoutAuth_userInput> =
+  z
+    .object({
+      where: z.lazy(() => AuthSessionWhereUniqueInputSchema),
+      update: z.union([
+        z.lazy(() => AuthSessionUpdateWithoutAuth_userInputSchema),
+        z.lazy(() => AuthSessionUncheckedUpdateWithoutAuth_userInputSchema)
+      ]),
+      create: z.union([
+        z.lazy(() => AuthSessionCreateWithoutAuth_userInputSchema),
+        z.lazy(() => AuthSessionUncheckedCreateWithoutAuth_userInputSchema)
+      ])
+    })
+    .strict();
 
 export default AuthSessionUpsertWithWhereUniqueWithoutAuth_userInputSchema;

@@ -6,10 +6,19 @@ import { TrainingLogTrickUncheckedUpdateWithoutTrickInputSchema } from './Traini
 import { TrainingLogTrickCreateWithoutTrickInputSchema } from './TrainingLogTrickCreateWithoutTrickInputSchema';
 import { TrainingLogTrickUncheckedCreateWithoutTrickInputSchema } from './TrainingLogTrickUncheckedCreateWithoutTrickInputSchema';
 
-export const TrainingLogTrickUpsertWithWhereUniqueWithoutTrickInputSchema: z.ZodType<Prisma.TrainingLogTrickUpsertWithWhereUniqueWithoutTrickInput> = z.object({
-  where: z.lazy(() => TrainingLogTrickWhereUniqueInputSchema),
-  update: z.union([ z.lazy(() => TrainingLogTrickUpdateWithoutTrickInputSchema),z.lazy(() => TrainingLogTrickUncheckedUpdateWithoutTrickInputSchema) ]),
-  create: z.union([ z.lazy(() => TrainingLogTrickCreateWithoutTrickInputSchema),z.lazy(() => TrainingLogTrickUncheckedCreateWithoutTrickInputSchema) ]),
-}).strict();
+export const TrainingLogTrickUpsertWithWhereUniqueWithoutTrickInputSchema: z.ZodType<Prisma.TrainingLogTrickUpsertWithWhereUniqueWithoutTrickInput> =
+  z
+    .object({
+      where: z.lazy(() => TrainingLogTrickWhereUniqueInputSchema),
+      update: z.union([
+        z.lazy(() => TrainingLogTrickUpdateWithoutTrickInputSchema),
+        z.lazy(() => TrainingLogTrickUncheckedUpdateWithoutTrickInputSchema)
+      ]),
+      create: z.union([
+        z.lazy(() => TrainingLogTrickCreateWithoutTrickInputSchema),
+        z.lazy(() => TrainingLogTrickUncheckedCreateWithoutTrickInputSchema)
+      ])
+    })
+    .strict();
 
 export default TrainingLogTrickUpsertWithWhereUniqueWithoutTrickInputSchema;

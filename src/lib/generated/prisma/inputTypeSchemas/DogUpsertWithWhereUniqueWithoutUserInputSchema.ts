@@ -6,10 +6,19 @@ import { DogUncheckedUpdateWithoutUserInputSchema } from './DogUncheckedUpdateWi
 import { DogCreateWithoutUserInputSchema } from './DogCreateWithoutUserInputSchema';
 import { DogUncheckedCreateWithoutUserInputSchema } from './DogUncheckedCreateWithoutUserInputSchema';
 
-export const DogUpsertWithWhereUniqueWithoutUserInputSchema: z.ZodType<Prisma.DogUpsertWithWhereUniqueWithoutUserInput> = z.object({
-  where: z.lazy(() => DogWhereUniqueInputSchema),
-  update: z.union([ z.lazy(() => DogUpdateWithoutUserInputSchema),z.lazy(() => DogUncheckedUpdateWithoutUserInputSchema) ]),
-  create: z.union([ z.lazy(() => DogCreateWithoutUserInputSchema),z.lazy(() => DogUncheckedCreateWithoutUserInputSchema) ]),
-}).strict();
+export const DogUpsertWithWhereUniqueWithoutUserInputSchema: z.ZodType<Prisma.DogUpsertWithWhereUniqueWithoutUserInput> =
+  z
+    .object({
+      where: z.lazy(() => DogWhereUniqueInputSchema),
+      update: z.union([
+        z.lazy(() => DogUpdateWithoutUserInputSchema),
+        z.lazy(() => DogUncheckedUpdateWithoutUserInputSchema)
+      ]),
+      create: z.union([
+        z.lazy(() => DogCreateWithoutUserInputSchema),
+        z.lazy(() => DogUncheckedCreateWithoutUserInputSchema)
+      ])
+    })
+    .strict();
 
 export default DogUpsertWithWhereUniqueWithoutUserInputSchema;

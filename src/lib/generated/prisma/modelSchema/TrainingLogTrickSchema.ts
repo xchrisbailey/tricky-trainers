@@ -9,8 +9,9 @@ export const TrainingLogTrickSchema = z.object({
   log_id: z.string(),
   understanding: z.number().int(),
   notes: z.string().nullable(),
-})
+  train_date: z.coerce.date()
+});
 
-export type TrainingLogTrick = z.infer<typeof TrainingLogTrickSchema>
+export type TrainingLogTrick = z.infer<typeof TrainingLogTrickSchema>;
 
 export default TrainingLogTrickSchema;

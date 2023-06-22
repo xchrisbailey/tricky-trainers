@@ -1,10 +1,13 @@
 import type { Prisma } from '@prisma/client';
 import { z } from 'zod';
 
-export const AuthSessionCreateManyAuth_userInputSchema: z.ZodType<Prisma.AuthSessionCreateManyAuth_userInput> = z.object({
-  id: z.string(),
-  active_expires: z.bigint(),
-  idle_expires: z.bigint()
-}).strict();
+export const AuthSessionCreateManyAuth_userInputSchema: z.ZodType<Prisma.AuthSessionCreateManyAuth_userInput> =
+  z
+    .object({
+      id: z.string(),
+      active_expires: z.bigint(),
+      idle_expires: z.bigint()
+    })
+    .strict();
 
 export default AuthSessionCreateManyAuth_userInputSchema;

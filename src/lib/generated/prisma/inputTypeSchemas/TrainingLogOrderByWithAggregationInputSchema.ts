@@ -5,13 +5,16 @@ import { TrainingLogCountOrderByAggregateInputSchema } from './TrainingLogCountO
 import { TrainingLogMaxOrderByAggregateInputSchema } from './TrainingLogMaxOrderByAggregateInputSchema';
 import { TrainingLogMinOrderByAggregateInputSchema } from './TrainingLogMinOrderByAggregateInputSchema';
 
-export const TrainingLogOrderByWithAggregationInputSchema: z.ZodType<Prisma.TrainingLogOrderByWithAggregationInput> = z.object({
-  id: z.lazy(() => SortOrderSchema).optional(),
-  dog_id: z.lazy(() => SortOrderSchema).optional(),
-  user_id: z.lazy(() => SortOrderSchema).optional(),
-  _count: z.lazy(() => TrainingLogCountOrderByAggregateInputSchema).optional(),
-  _max: z.lazy(() => TrainingLogMaxOrderByAggregateInputSchema).optional(),
-  _min: z.lazy(() => TrainingLogMinOrderByAggregateInputSchema).optional()
-}).strict();
+export const TrainingLogOrderByWithAggregationInputSchema: z.ZodType<Prisma.TrainingLogOrderByWithAggregationInput> =
+  z
+    .object({
+      id: z.lazy(() => SortOrderSchema).optional(),
+      dog_id: z.lazy(() => SortOrderSchema).optional(),
+      user_id: z.lazy(() => SortOrderSchema).optional(),
+      _count: z.lazy(() => TrainingLogCountOrderByAggregateInputSchema).optional(),
+      _max: z.lazy(() => TrainingLogMaxOrderByAggregateInputSchema).optional(),
+      _min: z.lazy(() => TrainingLogMinOrderByAggregateInputSchema).optional()
+    })
+    .strict();
 
 export default TrainingLogOrderByWithAggregationInputSchema;
