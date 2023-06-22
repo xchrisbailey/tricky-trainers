@@ -10,6 +10,17 @@ export const load: PageServerLoad = async ({ locals, params }) => {
   const dog: Dog | null = await db.dog.findFirst({
     where: {
       id: params.id
+    },
+    include: {
+      TrainingLog: {
+        include: {
+          TrainingLogTrick: {
+            include: {
+              trick: true
+            }
+          }
+        }
+      }
     }
   });
 
@@ -18,6 +29,8 @@ export const load: PageServerLoad = async ({ locals, params }) => {
   } else if (dog.user_id !== user.userId) {
     throw error(401, 'not your puppers');
   }
+
+  console.log(dog);
 
   return {
     dog

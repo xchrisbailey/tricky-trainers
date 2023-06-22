@@ -42,6 +42,15 @@ export const actions = {
             connect: {
               id: user.userId
             }
+          },
+          TrainingLog: {
+            create: {
+              user: {
+                connect: {
+                  id: user.userId
+                }
+              }
+            }
           }
         }
       });
