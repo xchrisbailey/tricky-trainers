@@ -5,18 +5,9 @@ import { DogUncheckedUpdateWithoutTrainingLogInputSchema } from './DogUncheckedU
 import { DogCreateWithoutTrainingLogInputSchema } from './DogCreateWithoutTrainingLogInputSchema';
 import { DogUncheckedCreateWithoutTrainingLogInputSchema } from './DogUncheckedCreateWithoutTrainingLogInputSchema';
 
-export const DogUpsertWithoutTrainingLogInputSchema: z.ZodType<Prisma.DogUpsertWithoutTrainingLogInput> =
-  z
-    .object({
-      update: z.union([
-        z.lazy(() => DogUpdateWithoutTrainingLogInputSchema),
-        z.lazy(() => DogUncheckedUpdateWithoutTrainingLogInputSchema)
-      ]),
-      create: z.union([
-        z.lazy(() => DogCreateWithoutTrainingLogInputSchema),
-        z.lazy(() => DogUncheckedCreateWithoutTrainingLogInputSchema)
-      ])
-    })
-    .strict();
+export const DogUpsertWithoutTrainingLogInputSchema: z.ZodType<Prisma.DogUpsertWithoutTrainingLogInput> = z.object({
+  update: z.union([ z.lazy(() => DogUpdateWithoutTrainingLogInputSchema),z.lazy(() => DogUncheckedUpdateWithoutTrainingLogInputSchema) ]),
+  create: z.union([ z.lazy(() => DogCreateWithoutTrainingLogInputSchema),z.lazy(() => DogUncheckedCreateWithoutTrainingLogInputSchema) ]),
+}).strict();
 
 export default DogUpsertWithoutTrainingLogInputSchema;

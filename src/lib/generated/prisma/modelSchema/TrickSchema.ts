@@ -11,9 +11,9 @@ export const TrickSchema = z.object({
   example: z.string(),
   difficulty: z.number().int(),
   added_by: z.string(),
-  created_on: z.coerce.date()
-});
+  created_on: z.coerce.date(),
+})
 
-export type Trick = z.infer<typeof TrickSchema>;
+export type Trick = z.infer<typeof TrickSchema>
 
 export default TrickSchema;

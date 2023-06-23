@@ -5,18 +5,9 @@ import { AuthUserUncheckedUpdateWithoutAuth_keyInputSchema } from './AuthUserUnc
 import { AuthUserCreateWithoutAuth_keyInputSchema } from './AuthUserCreateWithoutAuth_keyInputSchema';
 import { AuthUserUncheckedCreateWithoutAuth_keyInputSchema } from './AuthUserUncheckedCreateWithoutAuth_keyInputSchema';
 
-export const AuthUserUpsertWithoutAuth_keyInputSchema: z.ZodType<Prisma.AuthUserUpsertWithoutAuth_keyInput> =
-  z
-    .object({
-      update: z.union([
-        z.lazy(() => AuthUserUpdateWithoutAuth_keyInputSchema),
-        z.lazy(() => AuthUserUncheckedUpdateWithoutAuth_keyInputSchema)
-      ]),
-      create: z.union([
-        z.lazy(() => AuthUserCreateWithoutAuth_keyInputSchema),
-        z.lazy(() => AuthUserUncheckedCreateWithoutAuth_keyInputSchema)
-      ])
-    })
-    .strict();
+export const AuthUserUpsertWithoutAuth_keyInputSchema: z.ZodType<Prisma.AuthUserUpsertWithoutAuth_keyInput> = z.object({
+  update: z.union([ z.lazy(() => AuthUserUpdateWithoutAuth_keyInputSchema),z.lazy(() => AuthUserUncheckedUpdateWithoutAuth_keyInputSchema) ]),
+  create: z.union([ z.lazy(() => AuthUserCreateWithoutAuth_keyInputSchema),z.lazy(() => AuthUserUncheckedCreateWithoutAuth_keyInputSchema) ]),
+}).strict();
 
 export default AuthUserUpsertWithoutAuth_keyInputSchema;

@@ -1,31 +1,27 @@
 import { z } from 'zod';
 import type { Prisma } from '@prisma/client';
-import { AuthKeyIncludeSchema } from '../inputTypeSchemas/AuthKeyIncludeSchema';
-import { AuthKeyUpdateInputSchema } from '../inputTypeSchemas/AuthKeyUpdateInputSchema';
-import { AuthKeyUncheckedUpdateInputSchema } from '../inputTypeSchemas/AuthKeyUncheckedUpdateInputSchema';
-import { AuthKeyWhereUniqueInputSchema } from '../inputTypeSchemas/AuthKeyWhereUniqueInputSchema';
-import { AuthUserArgsSchema } from '../outputTypeSchemas/AuthUserArgsSchema';
+import { AuthKeyIncludeSchema } from '../inputTypeSchemas/AuthKeyIncludeSchema'
+import { AuthKeyUpdateInputSchema } from '../inputTypeSchemas/AuthKeyUpdateInputSchema'
+import { AuthKeyUncheckedUpdateInputSchema } from '../inputTypeSchemas/AuthKeyUncheckedUpdateInputSchema'
+import { AuthKeyWhereUniqueInputSchema } from '../inputTypeSchemas/AuthKeyWhereUniqueInputSchema'
+import { AuthUserArgsSchema } from "../outputTypeSchemas/AuthUserArgsSchema"
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 
-export const AuthKeySelectSchema: z.ZodType<Prisma.AuthKeySelect> = z
-  .object({
-    id: z.boolean().optional(),
-    hashed_password: z.boolean().optional(),
-    user_id: z.boolean().optional(),
-    primary_key: z.boolean().optional(),
-    expires: z.boolean().optional(),
-    auth_user: z.union([z.boolean(), z.lazy(() => AuthUserArgsSchema)]).optional()
-  })
-  .strict();
+export const AuthKeySelectSchema: z.ZodType<Prisma.AuthKeySelect> = z.object({
+  id: z.boolean().optional(),
+  hashed_password: z.boolean().optional(),
+  user_id: z.boolean().optional(),
+  primary_key: z.boolean().optional(),
+  expires: z.boolean().optional(),
+  auth_user: z.union([z.boolean(),z.lazy(() => AuthUserArgsSchema)]).optional(),
+}).strict()
 
-export const AuthKeyUpdateArgsSchema: z.ZodType<Prisma.AuthKeyUpdateArgs> = z
-  .object({
-    select: AuthKeySelectSchema.optional(),
-    include: AuthKeyIncludeSchema.optional(),
-    data: z.union([AuthKeyUpdateInputSchema, AuthKeyUncheckedUpdateInputSchema]),
-    where: AuthKeyWhereUniqueInputSchema
-  })
-  .strict();
+export const AuthKeyUpdateArgsSchema: z.ZodType<Prisma.AuthKeyUpdateArgs> = z.object({
+  select: AuthKeySelectSchema.optional(),
+  include: AuthKeyIncludeSchema.optional(),
+  data: z.union([ AuthKeyUpdateInputSchema,AuthKeyUncheckedUpdateInputSchema ]),
+  where: AuthKeyWhereUniqueInputSchema,
+}).strict()
 
 export default AuthKeyUpdateArgsSchema;

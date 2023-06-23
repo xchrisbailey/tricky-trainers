@@ -5,18 +5,10 @@ import { AuthUserUncheckedCreateWithoutAuth_keyInputSchema } from './AuthUserUnc
 import { AuthUserCreateOrConnectWithoutAuth_keyInputSchema } from './AuthUserCreateOrConnectWithoutAuth_keyInputSchema';
 import { AuthUserWhereUniqueInputSchema } from './AuthUserWhereUniqueInputSchema';
 
-export const AuthUserCreateNestedOneWithoutAuth_keyInputSchema: z.ZodType<Prisma.AuthUserCreateNestedOneWithoutAuth_keyInput> =
-  z
-    .object({
-      create: z
-        .union([
-          z.lazy(() => AuthUserCreateWithoutAuth_keyInputSchema),
-          z.lazy(() => AuthUserUncheckedCreateWithoutAuth_keyInputSchema)
-        ])
-        .optional(),
-      connectOrCreate: z.lazy(() => AuthUserCreateOrConnectWithoutAuth_keyInputSchema).optional(),
-      connect: z.lazy(() => AuthUserWhereUniqueInputSchema).optional()
-    })
-    .strict();
+export const AuthUserCreateNestedOneWithoutAuth_keyInputSchema: z.ZodType<Prisma.AuthUserCreateNestedOneWithoutAuth_keyInput> = z.object({
+  create: z.union([ z.lazy(() => AuthUserCreateWithoutAuth_keyInputSchema),z.lazy(() => AuthUserUncheckedCreateWithoutAuth_keyInputSchema) ]).optional(),
+  connectOrCreate: z.lazy(() => AuthUserCreateOrConnectWithoutAuth_keyInputSchema).optional(),
+  connect: z.lazy(() => AuthUserWhereUniqueInputSchema).optional()
+}).strict();
 
 export default AuthUserCreateNestedOneWithoutAuth_keyInputSchema;

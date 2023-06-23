@@ -4,15 +4,9 @@ import { TrainingLogScalarWhereInputSchema } from './TrainingLogScalarWhereInput
 import { TrainingLogUpdateManyMutationInputSchema } from './TrainingLogUpdateManyMutationInputSchema';
 import { TrainingLogUncheckedUpdateManyWithoutTrainingLogInputSchema } from './TrainingLogUncheckedUpdateManyWithoutTrainingLogInputSchema';
 
-export const TrainingLogUpdateManyWithWhereWithoutUserInputSchema: z.ZodType<Prisma.TrainingLogUpdateManyWithWhereWithoutUserInput> =
-  z
-    .object({
-      where: z.lazy(() => TrainingLogScalarWhereInputSchema),
-      data: z.union([
-        z.lazy(() => TrainingLogUpdateManyMutationInputSchema),
-        z.lazy(() => TrainingLogUncheckedUpdateManyWithoutTrainingLogInputSchema)
-      ])
-    })
-    .strict();
+export const TrainingLogUpdateManyWithWhereWithoutUserInputSchema: z.ZodType<Prisma.TrainingLogUpdateManyWithWhereWithoutUserInput> = z.object({
+  where: z.lazy(() => TrainingLogScalarWhereInputSchema),
+  data: z.union([ z.lazy(() => TrainingLogUpdateManyMutationInputSchema),z.lazy(() => TrainingLogUncheckedUpdateManyWithoutTrainingLogInputSchema) ]),
+}).strict();
 
 export default TrainingLogUpdateManyWithWhereWithoutUserInputSchema;

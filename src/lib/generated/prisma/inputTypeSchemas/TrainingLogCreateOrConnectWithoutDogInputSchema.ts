@@ -4,15 +4,9 @@ import { TrainingLogWhereUniqueInputSchema } from './TrainingLogWhereUniqueInput
 import { TrainingLogCreateWithoutDogInputSchema } from './TrainingLogCreateWithoutDogInputSchema';
 import { TrainingLogUncheckedCreateWithoutDogInputSchema } from './TrainingLogUncheckedCreateWithoutDogInputSchema';
 
-export const TrainingLogCreateOrConnectWithoutDogInputSchema: z.ZodType<Prisma.TrainingLogCreateOrConnectWithoutDogInput> =
-  z
-    .object({
-      where: z.lazy(() => TrainingLogWhereUniqueInputSchema),
-      create: z.union([
-        z.lazy(() => TrainingLogCreateWithoutDogInputSchema),
-        z.lazy(() => TrainingLogUncheckedCreateWithoutDogInputSchema)
-      ])
-    })
-    .strict();
+export const TrainingLogCreateOrConnectWithoutDogInputSchema: z.ZodType<Prisma.TrainingLogCreateOrConnectWithoutDogInput> = z.object({
+  where: z.lazy(() => TrainingLogWhereUniqueInputSchema),
+  create: z.union([ z.lazy(() => TrainingLogCreateWithoutDogInputSchema),z.lazy(() => TrainingLogUncheckedCreateWithoutDogInputSchema) ]),
+}).strict();
 
 export default TrainingLogCreateOrConnectWithoutDogInputSchema;

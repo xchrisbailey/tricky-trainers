@@ -5,22 +5,20 @@ import { NestedIntFilterSchema } from './NestedIntFilterSchema';
 import { NestedFloatFilterSchema } from './NestedFloatFilterSchema';
 import { NestedBigIntFilterSchema } from './NestedBigIntFilterSchema';
 
-export const BigIntWithAggregatesFilterSchema: z.ZodType<Prisma.BigIntWithAggregatesFilter> = z
-  .object({
-    equals: z.bigint().optional(),
-    in: z.union([z.bigint().array(), z.bigint()]).optional(),
-    notIn: z.union([z.bigint().array(), z.bigint()]).optional(),
-    lt: z.bigint().optional(),
-    lte: z.bigint().optional(),
-    gt: z.bigint().optional(),
-    gte: z.bigint().optional(),
-    not: z.union([z.bigint(), z.lazy(() => NestedBigIntWithAggregatesFilterSchema)]).optional(),
-    _count: z.lazy(() => NestedIntFilterSchema).optional(),
-    _avg: z.lazy(() => NestedFloatFilterSchema).optional(),
-    _sum: z.lazy(() => NestedBigIntFilterSchema).optional(),
-    _min: z.lazy(() => NestedBigIntFilterSchema).optional(),
-    _max: z.lazy(() => NestedBigIntFilterSchema).optional()
-  })
-  .strict();
+export const BigIntWithAggregatesFilterSchema: z.ZodType<Prisma.BigIntWithAggregatesFilter> = z.object({
+  equals: z.bigint().optional(),
+  in: z.union([ z.bigint().array(),z.bigint() ]).optional(),
+  notIn: z.union([ z.bigint().array(),z.bigint() ]).optional(),
+  lt: z.bigint().optional(),
+  lte: z.bigint().optional(),
+  gt: z.bigint().optional(),
+  gte: z.bigint().optional(),
+  not: z.union([ z.bigint(),z.lazy(() => NestedBigIntWithAggregatesFilterSchema) ]).optional(),
+  _count: z.lazy(() => NestedIntFilterSchema).optional(),
+  _avg: z.lazy(() => NestedFloatFilterSchema).optional(),
+  _sum: z.lazy(() => NestedBigIntFilterSchema).optional(),
+  _min: z.lazy(() => NestedBigIntFilterSchema).optional(),
+  _max: z.lazy(() => NestedBigIntFilterSchema).optional()
+}).strict();
 
 export default BigIntWithAggregatesFilterSchema;

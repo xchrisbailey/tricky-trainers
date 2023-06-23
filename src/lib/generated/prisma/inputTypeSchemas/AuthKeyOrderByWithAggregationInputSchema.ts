@@ -8,24 +8,17 @@ import { AuthKeyMaxOrderByAggregateInputSchema } from './AuthKeyMaxOrderByAggreg
 import { AuthKeyMinOrderByAggregateInputSchema } from './AuthKeyMinOrderByAggregateInputSchema';
 import { AuthKeySumOrderByAggregateInputSchema } from './AuthKeySumOrderByAggregateInputSchema';
 
-export const AuthKeyOrderByWithAggregationInputSchema: z.ZodType<Prisma.AuthKeyOrderByWithAggregationInput> =
-  z
-    .object({
-      id: z.lazy(() => SortOrderSchema).optional(),
-      hashed_password: z
-        .union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)])
-        .optional(),
-      user_id: z.lazy(() => SortOrderSchema).optional(),
-      primary_key: z.lazy(() => SortOrderSchema).optional(),
-      expires: z
-        .union([z.lazy(() => SortOrderSchema), z.lazy(() => SortOrderInputSchema)])
-        .optional(),
-      _count: z.lazy(() => AuthKeyCountOrderByAggregateInputSchema).optional(),
-      _avg: z.lazy(() => AuthKeyAvgOrderByAggregateInputSchema).optional(),
-      _max: z.lazy(() => AuthKeyMaxOrderByAggregateInputSchema).optional(),
-      _min: z.lazy(() => AuthKeyMinOrderByAggregateInputSchema).optional(),
-      _sum: z.lazy(() => AuthKeySumOrderByAggregateInputSchema).optional()
-    })
-    .strict();
+export const AuthKeyOrderByWithAggregationInputSchema: z.ZodType<Prisma.AuthKeyOrderByWithAggregationInput> = z.object({
+  id: z.lazy(() => SortOrderSchema).optional(),
+  hashed_password: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
+  user_id: z.lazy(() => SortOrderSchema).optional(),
+  primary_key: z.lazy(() => SortOrderSchema).optional(),
+  expires: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
+  _count: z.lazy(() => AuthKeyCountOrderByAggregateInputSchema).optional(),
+  _avg: z.lazy(() => AuthKeyAvgOrderByAggregateInputSchema).optional(),
+  _max: z.lazy(() => AuthKeyMaxOrderByAggregateInputSchema).optional(),
+  _min: z.lazy(() => AuthKeyMinOrderByAggregateInputSchema).optional(),
+  _sum: z.lazy(() => AuthKeySumOrderByAggregateInputSchema).optional()
+}).strict();
 
 export default AuthKeyOrderByWithAggregationInputSchema;

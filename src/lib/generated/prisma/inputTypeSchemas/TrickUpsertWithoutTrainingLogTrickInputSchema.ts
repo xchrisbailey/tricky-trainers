@@ -5,18 +5,9 @@ import { TrickUncheckedUpdateWithoutTrainingLogTrickInputSchema } from './TrickU
 import { TrickCreateWithoutTrainingLogTrickInputSchema } from './TrickCreateWithoutTrainingLogTrickInputSchema';
 import { TrickUncheckedCreateWithoutTrainingLogTrickInputSchema } from './TrickUncheckedCreateWithoutTrainingLogTrickInputSchema';
 
-export const TrickUpsertWithoutTrainingLogTrickInputSchema: z.ZodType<Prisma.TrickUpsertWithoutTrainingLogTrickInput> =
-  z
-    .object({
-      update: z.union([
-        z.lazy(() => TrickUpdateWithoutTrainingLogTrickInputSchema),
-        z.lazy(() => TrickUncheckedUpdateWithoutTrainingLogTrickInputSchema)
-      ]),
-      create: z.union([
-        z.lazy(() => TrickCreateWithoutTrainingLogTrickInputSchema),
-        z.lazy(() => TrickUncheckedCreateWithoutTrainingLogTrickInputSchema)
-      ])
-    })
-    .strict();
+export const TrickUpsertWithoutTrainingLogTrickInputSchema: z.ZodType<Prisma.TrickUpsertWithoutTrainingLogTrickInput> = z.object({
+  update: z.union([ z.lazy(() => TrickUpdateWithoutTrainingLogTrickInputSchema),z.lazy(() => TrickUncheckedUpdateWithoutTrainingLogTrickInputSchema) ]),
+  create: z.union([ z.lazy(() => TrickCreateWithoutTrainingLogTrickInputSchema),z.lazy(() => TrickUncheckedCreateWithoutTrainingLogTrickInputSchema) ]),
+}).strict();
 
 export default TrickUpsertWithoutTrainingLogTrickInputSchema;

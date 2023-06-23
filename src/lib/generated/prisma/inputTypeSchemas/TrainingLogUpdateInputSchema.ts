@@ -5,17 +5,11 @@ import { DogUpdateOneRequiredWithoutTrainingLogNestedInputSchema } from './DogUp
 import { AuthUserUpdateOneRequiredWithoutTrainingLogNestedInputSchema } from './AuthUserUpdateOneRequiredWithoutTrainingLogNestedInputSchema';
 import { TrainingLogTrickUpdateManyWithoutTraining_logNestedInputSchema } from './TrainingLogTrickUpdateManyWithoutTraining_logNestedInputSchema';
 
-export const TrainingLogUpdateInputSchema: z.ZodType<Prisma.TrainingLogUpdateInput> = z
-  .object({
-    id: z
-      .union([z.string().cuid(), z.lazy(() => StringFieldUpdateOperationsInputSchema)])
-      .optional(),
-    dog: z.lazy(() => DogUpdateOneRequiredWithoutTrainingLogNestedInputSchema).optional(),
-    user: z.lazy(() => AuthUserUpdateOneRequiredWithoutTrainingLogNestedInputSchema).optional(),
-    TrainingLogTrick: z
-      .lazy(() => TrainingLogTrickUpdateManyWithoutTraining_logNestedInputSchema)
-      .optional()
-  })
-  .strict();
+export const TrainingLogUpdateInputSchema: z.ZodType<Prisma.TrainingLogUpdateInput> = z.object({
+  id: z.union([ z.string().cuid(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
+  dog: z.lazy(() => DogUpdateOneRequiredWithoutTrainingLogNestedInputSchema).optional(),
+  user: z.lazy(() => AuthUserUpdateOneRequiredWithoutTrainingLogNestedInputSchema).optional(),
+  TrainingLogTrick: z.lazy(() => TrainingLogTrickUpdateManyWithoutTraining_logNestedInputSchema).optional()
+}).strict();
 
 export default TrainingLogUpdateInputSchema;

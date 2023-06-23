@@ -8,27 +8,12 @@ import { AuthUserWhereUniqueInputSchema } from './AuthUserWhereUniqueInputSchema
 import { AuthUserUpdateWithoutAuth_sessionInputSchema } from './AuthUserUpdateWithoutAuth_sessionInputSchema';
 import { AuthUserUncheckedUpdateWithoutAuth_sessionInputSchema } from './AuthUserUncheckedUpdateWithoutAuth_sessionInputSchema';
 
-export const AuthUserUpdateOneRequiredWithoutAuth_sessionNestedInputSchema: z.ZodType<Prisma.AuthUserUpdateOneRequiredWithoutAuth_sessionNestedInput> =
-  z
-    .object({
-      create: z
-        .union([
-          z.lazy(() => AuthUserCreateWithoutAuth_sessionInputSchema),
-          z.lazy(() => AuthUserUncheckedCreateWithoutAuth_sessionInputSchema)
-        ])
-        .optional(),
-      connectOrCreate: z
-        .lazy(() => AuthUserCreateOrConnectWithoutAuth_sessionInputSchema)
-        .optional(),
-      upsert: z.lazy(() => AuthUserUpsertWithoutAuth_sessionInputSchema).optional(),
-      connect: z.lazy(() => AuthUserWhereUniqueInputSchema).optional(),
-      update: z
-        .union([
-          z.lazy(() => AuthUserUpdateWithoutAuth_sessionInputSchema),
-          z.lazy(() => AuthUserUncheckedUpdateWithoutAuth_sessionInputSchema)
-        ])
-        .optional()
-    })
-    .strict();
+export const AuthUserUpdateOneRequiredWithoutAuth_sessionNestedInputSchema: z.ZodType<Prisma.AuthUserUpdateOneRequiredWithoutAuth_sessionNestedInput> = z.object({
+  create: z.union([ z.lazy(() => AuthUserCreateWithoutAuth_sessionInputSchema),z.lazy(() => AuthUserUncheckedCreateWithoutAuth_sessionInputSchema) ]).optional(),
+  connectOrCreate: z.lazy(() => AuthUserCreateOrConnectWithoutAuth_sessionInputSchema).optional(),
+  upsert: z.lazy(() => AuthUserUpsertWithoutAuth_sessionInputSchema).optional(),
+  connect: z.lazy(() => AuthUserWhereUniqueInputSchema).optional(),
+  update: z.union([ z.lazy(() => AuthUserUpdateWithoutAuth_sessionInputSchema),z.lazy(() => AuthUserUncheckedUpdateWithoutAuth_sessionInputSchema) ]).optional(),
+}).strict();
 
 export default AuthUserUpdateOneRequiredWithoutAuth_sessionNestedInputSchema;

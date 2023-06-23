@@ -27,8 +27,14 @@
     </p>
     <p><span class="underline">breed</span>: {data.dog.breed}</p>
   </section>
-  <section>
+  <section class="flex flex-col gap-1 mt-3">
     <h3 class="h3">Training Log</h3>
+    {#if data.dog?.TrainingLog.length > 0}
+      add some logs
+    {:else}
+      <p>no training logs</p>
+    {/if}
+    <button class="mt-4 btn variant-ghost">add a training event</button>
   </section>
 </div>
 <div class="flex gap-2 mt-10">

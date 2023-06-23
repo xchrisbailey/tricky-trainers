@@ -5,23 +5,11 @@ import { IntFieldUpdateOperationsInputSchema } from './IntFieldUpdateOperationsI
 import { NullableStringFieldUpdateOperationsInputSchema } from './NullableStringFieldUpdateOperationsInputSchema';
 import { DateTimeFieldUpdateOperationsInputSchema } from './DateTimeFieldUpdateOperationsInputSchema';
 
-export const TrainingLogTrickUncheckedUpdateManyWithoutTrainingLogTrickInputSchema: z.ZodType<Prisma.TrainingLogTrickUncheckedUpdateManyWithoutTrainingLogTrickInput> =
-  z
-    .object({
-      log_id: z
-        .union([z.string(), z.lazy(() => StringFieldUpdateOperationsInputSchema)])
-        .optional(),
-      understanding: z
-        .union([z.number().int(), z.lazy(() => IntFieldUpdateOperationsInputSchema)])
-        .optional(),
-      notes: z
-        .union([z.string(), z.lazy(() => NullableStringFieldUpdateOperationsInputSchema)])
-        .optional()
-        .nullable(),
-      train_date: z
-        .union([z.coerce.date(), z.lazy(() => DateTimeFieldUpdateOperationsInputSchema)])
-        .optional()
-    })
-    .strict();
+export const TrainingLogTrickUncheckedUpdateManyWithoutTrainingLogTrickInputSchema: z.ZodType<Prisma.TrainingLogTrickUncheckedUpdateManyWithoutTrainingLogTrickInput> = z.object({
+  log_id: z.union([ z.string(),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
+  understanding: z.union([ z.number().int(),z.lazy(() => IntFieldUpdateOperationsInputSchema) ]).optional(),
+  notes: z.union([ z.string(),z.lazy(() => NullableStringFieldUpdateOperationsInputSchema) ]).optional().nullable(),
+  train_date: z.union([ z.coerce.date(),z.lazy(() => DateTimeFieldUpdateOperationsInputSchema) ]).optional(),
+}).strict();
 
 export default TrainingLogTrickUncheckedUpdateManyWithoutTrainingLogTrickInputSchema;

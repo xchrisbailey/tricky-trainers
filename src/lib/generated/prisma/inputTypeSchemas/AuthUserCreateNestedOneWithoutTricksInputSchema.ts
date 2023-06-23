@@ -5,18 +5,10 @@ import { AuthUserUncheckedCreateWithoutTricksInputSchema } from './AuthUserUnche
 import { AuthUserCreateOrConnectWithoutTricksInputSchema } from './AuthUserCreateOrConnectWithoutTricksInputSchema';
 import { AuthUserWhereUniqueInputSchema } from './AuthUserWhereUniqueInputSchema';
 
-export const AuthUserCreateNestedOneWithoutTricksInputSchema: z.ZodType<Prisma.AuthUserCreateNestedOneWithoutTricksInput> =
-  z
-    .object({
-      create: z
-        .union([
-          z.lazy(() => AuthUserCreateWithoutTricksInputSchema),
-          z.lazy(() => AuthUserUncheckedCreateWithoutTricksInputSchema)
-        ])
-        .optional(),
-      connectOrCreate: z.lazy(() => AuthUserCreateOrConnectWithoutTricksInputSchema).optional(),
-      connect: z.lazy(() => AuthUserWhereUniqueInputSchema).optional()
-    })
-    .strict();
+export const AuthUserCreateNestedOneWithoutTricksInputSchema: z.ZodType<Prisma.AuthUserCreateNestedOneWithoutTricksInput> = z.object({
+  create: z.union([ z.lazy(() => AuthUserCreateWithoutTricksInputSchema),z.lazy(() => AuthUserUncheckedCreateWithoutTricksInputSchema) ]).optional(),
+  connectOrCreate: z.lazy(() => AuthUserCreateOrConnectWithoutTricksInputSchema).optional(),
+  connect: z.lazy(() => AuthUserWhereUniqueInputSchema).optional()
+}).strict();
 
 export default AuthUserCreateNestedOneWithoutTricksInputSchema;

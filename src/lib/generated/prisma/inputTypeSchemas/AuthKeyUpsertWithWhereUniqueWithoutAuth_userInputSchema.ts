@@ -6,19 +6,10 @@ import { AuthKeyUncheckedUpdateWithoutAuth_userInputSchema } from './AuthKeyUnch
 import { AuthKeyCreateWithoutAuth_userInputSchema } from './AuthKeyCreateWithoutAuth_userInputSchema';
 import { AuthKeyUncheckedCreateWithoutAuth_userInputSchema } from './AuthKeyUncheckedCreateWithoutAuth_userInputSchema';
 
-export const AuthKeyUpsertWithWhereUniqueWithoutAuth_userInputSchema: z.ZodType<Prisma.AuthKeyUpsertWithWhereUniqueWithoutAuth_userInput> =
-  z
-    .object({
-      where: z.lazy(() => AuthKeyWhereUniqueInputSchema),
-      update: z.union([
-        z.lazy(() => AuthKeyUpdateWithoutAuth_userInputSchema),
-        z.lazy(() => AuthKeyUncheckedUpdateWithoutAuth_userInputSchema)
-      ]),
-      create: z.union([
-        z.lazy(() => AuthKeyCreateWithoutAuth_userInputSchema),
-        z.lazy(() => AuthKeyUncheckedCreateWithoutAuth_userInputSchema)
-      ])
-    })
-    .strict();
+export const AuthKeyUpsertWithWhereUniqueWithoutAuth_userInputSchema: z.ZodType<Prisma.AuthKeyUpsertWithWhereUniqueWithoutAuth_userInput> = z.object({
+  where: z.lazy(() => AuthKeyWhereUniqueInputSchema),
+  update: z.union([ z.lazy(() => AuthKeyUpdateWithoutAuth_userInputSchema),z.lazy(() => AuthKeyUncheckedUpdateWithoutAuth_userInputSchema) ]),
+  create: z.union([ z.lazy(() => AuthKeyCreateWithoutAuth_userInputSchema),z.lazy(() => AuthKeyUncheckedCreateWithoutAuth_userInputSchema) ]),
+}).strict();
 
 export default AuthKeyUpsertWithWhereUniqueWithoutAuth_userInputSchema;
