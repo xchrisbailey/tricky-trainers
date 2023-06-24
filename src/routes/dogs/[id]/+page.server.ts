@@ -37,7 +37,7 @@ export const load = (async ({ locals, params }) => {
 export const actions = {
   delete: async ({ params, locals }) => {
     const { user } = await locals.auth.validateUser();
-    if (!user) return redirect(300, 'login');
+    if (!user) throw redirect(300, 'login');
 
     try {
       await db.dog.delete({ where: { id: params.id } });

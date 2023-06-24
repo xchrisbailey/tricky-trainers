@@ -2,8 +2,9 @@
   import { RangeSlider, toastStore } from '@skeletonlabs/skeleton';
   import { superForm } from 'sveltekit-superforms/client';
   import type { PageData } from './$types';
-  import { error, redirect } from '@sveltejs/kit';
+  import { error } from '@sveltejs/kit';
   import SuperDebug from 'sveltekit-superforms/client/SuperDebug.svelte';
+  import { goto } from '$app/navigation';
 
   export let data: PageData;
 
@@ -18,7 +19,7 @@
           message: 'trick added to database',
           background: 'variant-filled-success'
         });
-        return redirect(300, '/tricks');
+        return goto('/tricks');
       }
     },
     onError({ result }) {

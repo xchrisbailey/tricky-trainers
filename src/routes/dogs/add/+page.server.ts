@@ -6,7 +6,7 @@ import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ locals }) => {
   const { user } = await locals.auth.validateUser();
-  if (!user) return redirect(300, '/login');
+  if (!user) throw redirect(300, '/login');
 
   const form = await superValidate(null, new_dog_schema);
 
@@ -19,7 +19,7 @@ export const load: PageServerLoad = async ({ locals }) => {
 export const actions = {
   default: async ({ locals, request }) => {
     const { user } = await locals.auth.validateUser();
-    if (!user?.userId) return redirect(300, '/');
+    if (!user?.userId) throw redirect(300, '/');
 
     const data = await request.formData();
 

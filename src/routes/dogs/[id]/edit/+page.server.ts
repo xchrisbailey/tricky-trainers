@@ -6,10 +6,10 @@ import { update_dog_schema } from '$lib/schemas/dog';
 
 export const load: PageServerLoad = async ({ locals, params }) => {
   const { user } = await locals.auth.validateUser();
-  if (!user) return redirect(300, 'login');
+  if (!user) throw redirect(300, 'login');
 
   const dog = await db.dog.findFirst({ where: { id: params.id, user_id: user.userId } });
-  if (!dog) return redirect(300, 'dog not found');
+  if (!dog) throw redirect(300, 'dog not found');
 
   const form = await superValidate(dog, update_dog_schema);
 
@@ -28,7 +28,7 @@ export const actions = {
     const data = await request.formData();
     const form = await superValidate(data, update_dog_schema);
 
-    if (!form.valid) return fail(400, { form });
+    if (!form.valid) throw fail(400, { form });
 
     try {
       await db.dog.update({ where: { id: params.id }, data: form.data });

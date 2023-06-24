@@ -14,7 +14,7 @@ const new_trick_schema = TrickSchema.pick({
 export const load: PageServerLoad = async ({ locals }) => {
   const { user } = await locals.auth.validateUser();
 
-  if (user?.role !== 'ADMIN') return redirect(300, '/login');
+  if (user?.role !== 'ADMIN') throw redirect(300, '/login');
   const form = await superValidate(null, new_trick_schema);
 
   return {
