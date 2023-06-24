@@ -23,12 +23,12 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 export const actions = {
   default: async ({ params, request, locals }) => {
     const { user } = await locals.auth.validateUser();
-    if (!user) throw fail(401);
+    if (!user) return fail(401);
 
     const data = await request.formData();
     const form = await superValidate(data, update_dog_schema);
 
-    if (!form.valid) throw fail(400, { form });
+    if (!form.valid) return fail(400, { form });
 
     try {
       await db.dog.update({ where: { id: params.id }, data: form.data });

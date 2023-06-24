@@ -1,18 +1,18 @@
 import { db } from '$lib/db';
 import type { PageServerLoad } from './$types';
-import { fail } from '@sveltejs/kit';
+import { fail, redirect } from '@sveltejs/kit';
 
 export const load: PageServerLoad = async () => {
   try {
     const tricks = await db.trick.findMany({});
     if (!tricks) {
-      throw fail(400);
+      throw redirect(300, 'tricks not found');
     }
 
     return {
       tricks
     };
   } catch (e) {
-    throw fail(400, { e });
+    return fail(400, { e });
   }
 };

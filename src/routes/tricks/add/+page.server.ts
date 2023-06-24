@@ -31,7 +31,7 @@ export const actions = {
     const data = await request.formData();
     const form = await superValidate(data, new_trick_schema);
 
-    if (!form.valid) throw fail(400, { form });
+    if (!form.valid) return fail(400, { form });
     try {
       await db.trick.create({
         data: {
@@ -44,7 +44,7 @@ export const actions = {
         }
       });
     } catch (e) {
-      throw fail(400, { e });
+      return fail(400, { e });
     }
   }
 } satisfies Actions;

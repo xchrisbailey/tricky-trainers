@@ -57,7 +57,7 @@ export const actions = {
 
       return { success: true };
     } catch (e) {
-      throw fail(400, { e });
+      return fail(400, { e });
     }
   }
 } satisfies Actions;
