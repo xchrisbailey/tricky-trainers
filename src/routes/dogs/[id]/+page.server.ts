@@ -1,12 +1,12 @@
 import { db } from '$lib/db';
-import { error, fail, redirect } from '@sveltejs/kit';
+import { fail, redirect } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ locals, params }) => {
+export const load = (async ({ locals, params }) => {
   const { user } = await locals.auth.validateUser();
-  if (!user) return redirect(300, 'please login');
+  if (!user) throw redirect(300, 'please login');
 
-  const dog = await db.dog.findFirst({
+  const dog = await db.dog.findUnique({
     where: {
       id: params.id
     },
@@ -23,16 +23,16 @@ export const load: PageServerLoad = async ({ locals, params }) => {
     }
   });
 
-  if (!dog) {
-    throw error(400, 'dog not found');
+  if (!dog || dog === undefined) {
+    throw redirect(300, 'dog not found');
   } else if (dog.user_id !== user.userId) {
-    throw error(401, 'not your puppers');
+    throw redirect(300, 'not your doggo');
   }
 
   return {
-    dog: dog
+    dog
   };
-};
+}) satisfies PageServerLoad;
 
 export const actions = {
   delete: async ({ params, locals }) => {

@@ -5,7 +5,11 @@
   import { AppShell, Toast } from '@skeletonlabs/skeleton';
   import Sidebar from '$lib/components/sidebar.svelte';
   import Header from '$lib/components/header.svelte';
+  import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
+  import { storePopup } from '@skeletonlabs/skeleton';
   import type { PageData } from './$types';
+
+  storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
   export let data: PageData;
 </script>

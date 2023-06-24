@@ -43,6 +43,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@floating-ui/dom": "^1.4.2",
     "@lucia-auth/adapter-postgresql": "^1.0.1",
     "@lucia-auth/adapter-prisma": "^2.0.0",
     "@prisma/client": "4.16.1",

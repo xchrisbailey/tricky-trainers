@@ -1,8 +1,9 @@
 <script lang="ts">
-  import type { PageData } from './$types';
+  import { Edit, Trash2 } from 'svelte-lucide';
   import { enhance } from '$app/forms';
   import { goto } from '$app/navigation';
-  import { Edit, Trash2 } from 'svelte-lucide';
+
+  import type { PageData } from './$types';
 
   export let data: PageData;
 </script>
