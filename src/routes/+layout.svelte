@@ -1,5 +1,5 @@
 <script lang="ts">
-  import '@skeletonlabs/skeleton/themes/theme-modern.css';
+  import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
   import '@skeletonlabs/skeleton/styles/skeleton.css';
   import '../app.postcss';
   import { AppShell, Toast } from '@skeletonlabs/skeleton';

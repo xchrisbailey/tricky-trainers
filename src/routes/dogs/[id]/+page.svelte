@@ -4,8 +4,15 @@
   import { goto } from '$app/navigation';
 
   import type { PageData } from './$types';
+  import { popup, type PopupSettings } from '@skeletonlabs/skeleton';
 
   export let data: PageData;
+
+  const add_training_event: PopupSettings = {
+    event: 'click',
+    target: 'trainingEventPopup',
+    placement: 'bottom'
+  };
 </script>
 
 <h2 class="h1">{data.dog.flare} {data.dog.name}</h2>
@@ -35,7 +42,9 @@
     {:else}
       <p>no training logs</p>
     {/if}
-    <button class="mt-4 btn variant-ghost">add a training event</button>
+    <button class="mt-4 btn variant-ghost" use:popup={add_training_event}
+      >add a training event</button
+    >
   </section>
 </div>
 <div class="flex gap-2 mt-10">
@@ -53,4 +62,17 @@
     <button class="btn-icon variant-ghost-warning"><Trash2 /> </button>
   </form>
   <a href={`/dogs/${data.dog.id}/edit`} class="btn-icon variant-ghost-secondary"><Edit /></a>
+</div>
+
+<div class="p-4 w-1/3 shadow-xl card" data-popup="trainingEventPopup">
+  <header class="card-header"><h3 class="h3">Add Training Event</h3></header>
+  <section class="p-4">
+    <form method="post">
+      <label class="label">
+        <span>Trick Name</span>
+        <input type="text" name="trick" class="input" />
+      </label>
+      <button class="mt-2 btn variant-ghost-secondary">submit</button>
+    </form>
+  </section>
 </div>
