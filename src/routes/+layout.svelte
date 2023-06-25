@@ -1,6 +1,6 @@
 <script lang="ts">
-  import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
   import '@skeletonlabs/skeleton/styles/skeleton.css';
+  import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
   import '../app.postcss';
   import { AppShell, Toast } from '@skeletonlabs/skeleton';
   import Sidebar from '$lib/components/sidebar.svelte';
@@ -13,6 +13,10 @@
 
   export let data: PageData;
 </script>
+
+<!-- <svelte:head> -->
+<!--   {@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`} -->
+<!-- </svelte:head> -->
 
 <AppShell slotSidebarLeft="bg-surface-500/5 w-56 p-4" slotHeader="sticky">
   <svelte:fragment slot="header"><Header user={data.user} /></svelte:fragment>
